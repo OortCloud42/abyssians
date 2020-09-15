@@ -1,4 +1,3 @@
 # opengra
-2137
 
-UwU
+Stallman was right
