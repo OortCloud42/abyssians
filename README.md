@@ -3,7 +3,7 @@
 <img src="https://ai.github.io/size-limit/logo.svg" align="right"
      alt="Logo" width="120" height="178">
 
-Opis opis opis opis opis
+Opengra to mix RougeLite i Metroidvanii. 
 
 * **ES modules** and **tree-shaking** support.
 * Add Size Limit to **Travis CI**, **Circle CI**, **GitHub Actions**
