@@ -1,37 +1,19 @@
-# opengra
-
 Opengra
 =======
 
-Opengra to mix RougeLite i Metroidvanii o 
+**In development!**
 
-* **ES modules** and **tree-shaking** support.
-* Add Size Limit to **Travis CI**, **Circle CI**, **GitHub Actions**
-  or another CI system to know if a pull request adds a massive dependency.
-* **Modular** to fit different use cases: big JS applications
-  that use their own bundler or small npm libraries with many files.
-* Can calculate **the time** it would take a browser
-  to download and **execute** your JS. Time is a much more accurate
-  and understandable metric compared to the size in bytes.
-* Calculations include **all dependencies and polyfills**
-  used in your JS.
+Opengra to gra będąca mixem gatunków **RougeLite** i **Metroidvanii**. Jest to opowieść o samotnym wojowniku w zniszczonym i 
+rozpadającym się świecie, gdzie ostatnie ślady dawnej cywilizacji terroryzują jej obecnych mieszkańców.
 
-<p align="center">
-  <img src="./img/example.png" alt="Size Limit CLI" width="738">
-</p>
+Gra jest skierowana dla osób 13+.
 
-With **[GitHub action]** Size Limit will post bundle size changes as a comment
-in pull request discussion.
+Wspierane platformy
+-------------------
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/andresz1/size-limit-action/master/assets/pr.png"
-  alt="Size Limit comment in pull request about bundle size changes"
-  width="686" height="289">
-</p>
+Planowane które zamierzamy wspierać:
 
-With `--why`, Size Limit can tell you *why* your library is of this size
-and show the real cost of all your internal dependencies.
+* Windows
+* Linux
 
-<p align="center">
-  <img src="./img/why.png" alt="Bundle Analyzer example" width="650">
-</p>
+
