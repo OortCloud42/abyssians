@@ -10,3 +10,10 @@ Przewidujemy:
 Unikamy:
 Gracz przechodzi przez ścianę i wychodzi poza mapę co pozwoli mu na ominięcie pewnych etapów gry bądź przyśpieszenie postępu.
 
+Gracz wykorzystuje mechanike przechodzenia przez pomieszczenia aby móc uniknąć walki lub zmienić położenie przeciwników na swoją korzyść.
+Przewidujemy:
+a) Przywrócenie pomieszczenia do stanu pierwotnego odbierając graczowi rzeczy które w nim zdobył, karamy zachowanie poprzez utratę wszystkiego czego użył w danym pomieszczeniu
+b) zamknięcie pomieszczenia nie pozwalając graczowi na ucieczke
+Unikamy:
+Pomijania walk przez zmianę pomieszczenia i kopiowania przedmiotów
+
