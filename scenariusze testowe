@@ -1,0 +1,12 @@
+Użytkownik tworzy nowy zapis gry w którym wyświetlą się opcje nazwania zapisu oraz swojej postaci.
+Poprawne wykorzystanie: 
+Nazwanie zapisu i postaci zwykłymi literami oraz cyframi.
+Niepoprawne wykorzystanie:
+Próby wstrzyknięcia własnego kodu przez puste pole na tekst, przeciążenie danych przez dziwne symbole.
+
+Gracz próbuje wcisnąć się w ścianę aby wyjść poza mapę.
+Przewidujemy:
+Ściana po prostu zatrzyma gracza. (chyba, że dodamy mechanike ukrytych pokojów i będzie to zabieg celowy. W takiej sytuacji gracz trafi do przewidzianego pomieszczenia.)
+Unikamy:
+Gracz przechodzi przez ścianę i wychodzi poza mapę co pozwoli mu na ominięcie pewnych etapów gry bądź przyśpieszenie postępu.
+
