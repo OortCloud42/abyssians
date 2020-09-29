@@ -13,6 +13,7 @@ Wspierane platformy
 
 Platformy które zamierzamy wspierać:
 
+* Windows
 * Linux
 
 
