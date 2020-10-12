@@ -14,16 +14,6 @@ Wspierane platformy
 Platformy które zamierzamy wspierać:
 
 * Linux
-* Linux
-* Linux
-* Linux
-* Linux
-* Linux
-* Linux
-* Linux
-* Linux
-* Linux
-* Linux
 * Windows
 
 
