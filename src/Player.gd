@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
 const INTENDED_FPS = 60
-const ACCELERATION = 8
+const ACCELERATION = 12
 const MAX_SPEED = 64
 const FRICTION = 0.25
 const AIR_RESISTANCE = 0.02
-const GRAVITY = 4
-const JUMP_FORCE = 125
+const GRAVITY = 6
+const JUMP_FORCE = 150
 
 var motion = Vector2.ZERO
 
@@ -29,7 +29,7 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		if x_input == 0:
-			#motion.x = lerp(motion.x, 0, pow(1 - FRICTION, delta))
+			#motion.x = lerp(motion.x, 0, 1 - pow(FRICTION, delta))
 			motion.x = lerp(motion.x, 0, FRICTION * delta * INTENDED_FPS)
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = -JUMP_FORCE
