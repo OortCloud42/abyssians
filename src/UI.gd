@@ -1,6 +1,9 @@
 extends Control
 
-const world = preload("res://World.tscn")
+const world = "res://World.tscn"
+const settings = "res://Settings.tscn"
+
+const entryCount = 3
 
 onready var selector_start = $MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/selector
 onready var selector_settings = $MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/selector
@@ -10,7 +13,7 @@ func _ready():
 	set_current_selection(0)
 	
 func _process(delta):
-	if Input.is_action_just_pressed("ui_down") and current_selection < 2:
+	if Input.is_action_just_pressed("ui_down") and current_selection < entryCount - 1:
 		current_selection += 1
 		set_current_selection(current_selection)
 	if Input.is_action_just_pressed("ui_up") and current_selection > 0:
@@ -23,10 +26,9 @@ func _process(delta):
 func handle_selection(_current_selection):
 	match _current_selection:
 		0:
-			get_parent().add_child(world.instance())
-			queue_free()
+			get_tree().change_scene(world)
 		1:
-			print("")
+			get_tree().change_scene(settings)
 		2:
 			get_tree().quit()
 
