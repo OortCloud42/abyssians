@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const main_menu = "res://UI.tscn"
+
 const ACCELERATION = 1
 const MAX_SPEED = 80
 const FRICTION = 1
@@ -16,14 +18,24 @@ onready var animationTree = $AnimationTree
 
 func _physics_process(delta):
 	var direction = get_direction()
+	var keys = get_keys()
 	move_player(delta, direction)
 	play_animations(direction)
+	if keys["escape"] > 0:
+		get_tree().change_scene(main_menu)
 
 
 func get_direction():
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		-Input.get_action_strength("jump") if is_on_floor() and Input.is_action_just_pressed("jump") else 0.0)
+
+
+func get_keys():
+	var keys = {
+		"escape": Input.get_action_strength("escape"),
+	}
+	return keys
 
 
 func move_player(delta, direction):

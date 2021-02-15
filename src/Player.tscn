@@ -73,41 +73,41 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Jump_down"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Jump_up"
 
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Run"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "Stand"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
-
-[sub_resource type="AnimationNodeStateMachine" id=10]
-states/Jump_down/node = SubResource( 12 )
+[sub_resource type="AnimationNodeStateMachine" id=15]
+states/Jump_down/node = SubResource( 6 )
 states/Jump_down/position = Vector2( 396, 180 )
-states/Jump_up/node = SubResource( 13 )
+states/Jump_up/node = SubResource( 7 )
 states/Jump_up/position = Vector2( 224, 180 )
-states/Run/node = SubResource( 6 )
+states/Run/node = SubResource( 8 )
 states/Run/position = Vector2( 483, 83 )
-states/Stand/node = SubResource( 7 )
+states/Stand/node = SubResource( 9 )
 states/Stand/position = Vector2( 297, 83 )
-transitions = [ "Stand", "Run", SubResource( 8 ), "Run", "Stand", SubResource( 9 ), "Stand", "Jump_up", SubResource( 14 ), "Jump_up", "Jump_down", SubResource( 15 ), "Jump_down", "Stand", SubResource( 16 ) ]
+transitions = [ "Stand", "Run", SubResource( 10 ), "Run", "Stand", SubResource( 11 ), "Stand", "Jump_up", SubResource( 12 ), "Jump_up", "Jump_down", SubResource( 13 ), "Jump_down", "Stand", SubResource( 14 ) ]
 start_node = "Stand"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=11]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -128,7 +128,7 @@ anims/Run = SubResource( 4 )
 anims/Stand = SubResource( 5 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 10 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 11 )
+parameters/playback = SubResource( 16 )
