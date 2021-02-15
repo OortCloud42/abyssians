@@ -14,14 +14,18 @@ func _ready():
 	set_current_selection(0)
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_down") and current_selection < entryCount - 1:
+	if Input.is_action_just_pressed("move_down") and current_selection < entryCount - 1:
 		current_selection += 1
 		set_current_selection(current_selection)
-	if Input.is_action_just_pressed("ui_up") and current_selection > 0:
+	if Input.is_action_just_pressed("move_up") and current_selection > 0:
 		current_selection -= 1
 		set_current_selection(current_selection)
 		
 	if Input.is_action_just_pressed("ui_accept"):
+		handle_selection(current_selection)
+	if Input.is_action_just_pressed("escape"):
+		current_selection = 4
+		set_current_selection(current_selection)
 		handle_selection(current_selection)
 
 func handle_selection(_current_selection):
