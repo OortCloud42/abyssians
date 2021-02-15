@@ -65,12 +65,12 @@ margin_right = 87.0
 margin_bottom = 96.0
 
 [node name="CenterContainer" type="CenterContainer" parent="SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_right = 69.0
+margin_right = 87.0
 margin_bottom = 16.0
-size_flags_horizontal = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
-margin_right = 69.0
+margin_left = 9.0
+margin_right = 78.0
 margin_bottom = 16.0
 alignment = 1
 
@@ -94,6 +94,8 @@ align = 2
 margin_top = 20.0
 margin_right = 87.0
 margin_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
 margin_left = 7.0
