@@ -74,6 +74,7 @@ margin_bottom = 16.0
 [node name="selector" type="Label" parent="SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_right = 7.0
 margin_bottom = 16.0
+rect_min_size = Vector2( 7, 0 )
 custom_fonts/font = ExtResource( 2 )
 text = ">"
 
@@ -97,6 +98,7 @@ margin_bottom = 16.0
 [node name="selector" type="Label" parent="SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
 margin_right = 7.0
 margin_bottom = 16.0
+rect_min_size = Vector2( 7, 0 )
 custom_fonts/font = ExtResource( 2 )
 text = ">"
 
@@ -120,6 +122,7 @@ margin_bottom = 16.0
 [node name="selector" type="Label" parent="SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 margin_right = 7.0
 margin_bottom = 16.0
+rect_min_size = Vector2( 7, 0 )
 custom_fonts/font = ExtResource( 2 )
 text = ">"
 
@@ -143,6 +146,7 @@ margin_bottom = 16.0
 [node name="selector" type="Label" parent="SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
 margin_right = 7.0
 margin_bottom = 16.0
+rect_min_size = Vector2( 7, 0 )
 custom_fonts/font = ExtResource( 2 )
 text = ">"
 
@@ -165,6 +169,7 @@ margin_bottom = 16.0
 [node name="selector" type="Label" parent="SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer"]
 margin_right = 7.0
 margin_bottom = 16.0
+rect_min_size = Vector2( 7, 0 )
 custom_fonts/font = ExtResource( 2 )
 text = ">"
 
