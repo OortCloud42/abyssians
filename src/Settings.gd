@@ -13,7 +13,7 @@ onready var selector_exit = $SettingsMenu/CenterContainer/VBoxContainer/CenterCo
 func _ready():
 	set_current_selection(0)
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_down") and current_selection < entryCount - 1:
 		current_selection += 1
 		set_current_selection(current_selection)

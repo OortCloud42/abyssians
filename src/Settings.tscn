@@ -4,7 +4,7 @@
 [ext_resource path="res://UI_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Settings.gd" type="Script" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
@@ -50,7 +50,7 @@ margin_bottom = 16.0
 margin_left = 15.0
 margin_right = 71.0
 margin_bottom = 16.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Settings"
 
 [node name="CenterContainer2" type="CenterContainer" parent="SettingsMenu/CenterContainer/VBoxContainer"]
