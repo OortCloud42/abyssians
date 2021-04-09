@@ -1,27 +1,18 @@
-extends KinematicBody2D
+extends Actor
+
+class_name Player
 
 const main_menu = "res://scenes/UI.tscn"
 
-const ACCELERATION = 1
-const MAX_SPEED = 80
-const FRICTION = 1
-const AIR_FRICTION = 0.5
-const GRAVITY = 230
-const JUMP_SPEED = 120
-
-var motion = Vector2.ZERO
-
-onready var sprite = $Sprite
-onready var animationPlayer = $AnimationPlayer
-onready var stateMachine = $AnimationTree.get("parameters/playback")
-onready var animationTree = $AnimationTree
-
 func _physics_process(delta):
-	var direction = get_direction()
 	var keys = get_keys()
-	move_player(delta, direction)
+	direction = get_direction()
+	
+	move_actor(delta, direction)
 	play_animations(direction)
+	
 	if keys["escape"] > 0:
+# warning-ignore:return_value_discarded
 		get_tree().change_scene(main_menu)
 
 
@@ -38,30 +29,11 @@ func get_keys():
 	return keys
 
 
-func move_player(delta, direction):
-	motion.y += GRAVITY * delta
-	
-	if is_on_floor():
-		if direction.y < 0:
-			motion.y = JUMP_SPEED * direction.y
-		if direction.x != 0:
-			motion.x = lerp(motion.x, MAX_SPEED * direction.x, ACCELERATION)
-		else:
-			motion.x = lerp(motion.x, 0, FRICTION)
-	else:
-		if direction.x != 0:
-			motion.x = lerp(motion.x, MAX_SPEED * direction.x, AIR_FRICTION)
-		else:
-			motion.x = lerp(motion.x, 0, AIR_FRICTION)
-	
-	motion = move_and_slide(motion, Vector2.UP)
-
-
 func play_animations(direction):
 	sprite.flip_h = direction.x < 0
 	if is_on_floor():
 		if direction.x != 0:
-			stateMachine.travel("Run")
+			stateMachine.travel("Walk")
 		else:
 			stateMachine.travel("Stand")
 	else:

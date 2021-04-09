@@ -8,9 +8,32 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://scripts/Actor.gd"
+}, {
+"base": "Actor",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://scripts/Enemy.gd"
+}, {
+"base": "Actor",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/Player.gd"
+}, {
+"base": "Enemy",
+"class": "Slime",
+"language": "GDScript",
+"path": "res://scripts/Slime.gd"
+} ]
 _global_script_class_icons={
-
+"Actor": "",
+"Enemy": "",
+"Player": "",
+"Slime": ""
 }
 
 [application]

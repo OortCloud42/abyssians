@@ -38,8 +38,25 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "Stand"
+length = 0.05
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
 [sub_resource type="Animation" id=4]
-resource_name = "Run"
+resource_name = "Walk"
 length = 0.3
 loop = true
 step = 0.05
@@ -56,34 +73,17 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Stand"
-length = 0.1
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Jump_down"
 
 [sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Jump_up"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
-animation = "Run"
-
 [sub_resource type="AnimationNodeAnimation" id=9]
 animation = "Stand"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
@@ -100,17 +100,20 @@ states/Jump_down/node = SubResource( 6 )
 states/Jump_down/position = Vector2( 396, 180 )
 states/Jump_up/node = SubResource( 7 )
 states/Jump_up/position = Vector2( 224, 180 )
-states/Run/node = SubResource( 8 )
-states/Run/position = Vector2( 483, 83 )
 states/Stand/node = SubResource( 9 )
 states/Stand/position = Vector2( 297, 83 )
-transitions = [ "Stand", "Run", SubResource( 10 ), "Run", "Stand", SubResource( 11 ), "Stand", "Jump_up", SubResource( 12 ), "Jump_up", "Jump_down", SubResource( 13 ), "Jump_down", "Stand", SubResource( 14 ) ]
+states/Walk/node = SubResource( 8 )
+states/Walk/position = Vector2( 483, 83 )
+transitions = [ "Stand", "Walk", SubResource( 10 ), "Walk", "Stand", SubResource( 11 ), "Stand", "Jump_up", SubResource( 12 ), "Jump_up", "Jump_down", SubResource( 13 ), "Jump_down", "Stand", SubResource( 14 ) ]
 start_node = "Stand"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
@@ -124,8 +127,8 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Jump_down = SubResource( 2 )
 anims/Jump_up = SubResource( 3 )
-anims/Run = SubResource( 4 )
 anims/Stand = SubResource( 5 )
+anims/Walk = SubResource( 4 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 15 )
