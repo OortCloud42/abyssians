@@ -1,8 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Adventurer.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://UI_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Settings.gd" type="Script" id=3]
+[ext_resource path="res://assets/Adventurer.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://tilesets/UI_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/Settings.gd" type="Script" id=3]
+
+
+
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 2

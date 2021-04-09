@@ -16,8 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Abyssians"
-run/main_scene="res://UI.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/UI.tscn"
+config/icon="res://assets/icon.png"
 
 [display]
 
@@ -69,4 +69,4 @@ move_down={
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://tilesets/default_env.tres"

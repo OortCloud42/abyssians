@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/abyssians-tileset.png-22ef51245f939414d3c29c121f792489.stex"
+path="res://.import/abyssians-character.png-856d8f9ac46a429110c561272df86936.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://abyssians-tileset.png"
-dest_files=[ "res://.import/abyssians-tileset.png-22ef51245f939414d3c29c121f792489.stex" ]
+source_file="res://assets/abyssians-character.png"
+dest_files=[ "res://.import/abyssians-character.png-856d8f9ac46a429110c561272df86936.stex" ]
 
 [params]
 

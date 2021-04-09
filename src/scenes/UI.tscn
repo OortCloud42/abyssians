@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://UI_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://UI.gd" type="Script" id=2]
-[ext_resource path="res://title_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://tilesets/UI_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://tilesets/title_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/UI.gd" type="Script" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -53,7 +53,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer"]
 margin_right = 210.0
 margin_bottom = 48.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 text = "Abyssians"
 
 [node name="CenterContainer2" type="CenterContainer" parent="MainMenu/CenterContainer/VBoxContainer"]

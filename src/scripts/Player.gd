@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const main_menu = "res://UI.tscn"
+const main_menu = "res://scenes/UI.tscn"
 
 const ACCELERATION = 1
 const MAX_SPEED = 80

@@ -1,6 +1,6 @@
 extends Control
 
-const main_menu = "res://UI.tscn"
+const main_menu = "res://scenes/UI.tscn"
 
 const entryCount = 5
 

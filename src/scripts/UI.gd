@@ -1,7 +1,7 @@
 extends Control
 
-const world = "res://World.tscn"
-const settings = "res://Settings.tscn"
+const world = "res://scenes/World.tscn"
+const settings = "res://scenes/Settings.tscn"
 
 const entryCount = 3
 
@@ -14,7 +14,7 @@ func _ready():
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("escape"):
-		get_tree().change_scene("res://UI.tscn")
+		get_tree().change_scene("res://scenes/UI.tscn")
 	if Input.is_action_just_pressed("move_down") and current_selection < entryCount - 1:
 		current_selection += 1
 		set_current_selection(current_selection)
