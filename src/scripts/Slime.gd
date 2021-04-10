@@ -3,16 +3,25 @@ extends Enemy
 class_name Slime
 
 func _ready():
-	direction = Vector2.LEFT
+	if patrol_path:
+		patrol_points = get_node(patrol_path).curve.get_baked_points()
+		print("points:", patrol_points)
+
 
 func _physics_process(delta):
-	if is_on_wall():
-		if direction == Vector2.LEFT:
-			direction = Vector2.RIGHT
-		else:
-			direction = Vector2.LEFT
+#	if is_on_wall():
+#		if direction == Vector2.LEFT:
+#			direction = Vector2.RIGHT
+#		else:
+#			direction = Vector2.LEFT
+#	move_actor(delta, direction)
+#	play_animations(direction)
+	if !patrol_path:
+		return
+	direction = follow_path()
+	print("direction: ", direction)
 	move_actor(delta, direction)
-	play_animations(direction)
+
 
 func play_animations(direction):
 	sprite.flip_h = direction.x < 0

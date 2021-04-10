@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 6 )
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=2]
 resource_name = "In_air"
 length = 0.05
 tracks/0/type = "value"
@@ -22,8 +22,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Jump"
+[sub_resource type="Animation" id=3]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -38,7 +37,7 @@ tracks/0/keys = {
 "values": [ 0, 2 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "Land"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -53,7 +52,7 @@ tracks/0/keys = {
 "values": [ 2, 1, 0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "Stand"
 length = 0.05
 tracks/0/type = "value"
@@ -69,8 +68,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Walk"
+[sub_resource type="Animation" id=6]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -86,7 +84,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "In_air"
 
 [sub_resource type="AnimationNodeAnimation" id=8]
@@ -95,11 +93,17 @@ animation = "Jump"
 [sub_resource type="AnimationNodeAnimation" id=9]
 animation = "Land"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Stand"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=15]
 
@@ -109,35 +113,29 @@ animation = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
-
-[sub_resource type="AnimationNodeStateMachine" id=4]
-states/In_air/node = SubResource( 20 )
+[sub_resource type="AnimationNodeStateMachine" id=19]
+states/In_air/node = SubResource( 7 )
 states/In_air/position = Vector2( 771.83, 107 )
 states/Jump/node = SubResource( 8 )
 states/Jump/position = Vector2( 564, 48 )
 states/Land/node = SubResource( 9 )
 states/Land/position = Vector2( 564, 194 )
-states/Stand/node = SubResource( 13 )
+states/Stand/node = SubResource( 10 )
 states/Stand/position = Vector2( 332, 107 )
-states/Walk/node = SubResource( 14 )
+states/Walk/node = SubResource( 11 )
 states/Walk/position = Vector2( 108, 107 )
-transitions = [ "Stand", "Jump", SubResource( 15 ), "Land", "Stand", SubResource( 16 ), "Stand", "Walk", SubResource( 17 ), "Walk", "Stand", SubResource( 18 ), "Jump", "In_air", SubResource( 21 ), "In_air", "Land", SubResource( 22 ), "Stand", "In_air", SubResource( 23 ) ]
+transitions = [ "Stand", "Jump", SubResource( 12 ), "Land", "Stand", SubResource( 13 ), "Stand", "Walk", SubResource( 14 ), "Walk", "Stand", SubResource( 15 ), "Jump", "In_air", SubResource( 16 ), "In_air", "Land", SubResource( 17 ), "Stand", "In_air", SubResource( 18 ) ]
 start_node = "Stand"
 graph_offset = Vector2( -188.17, 11.872 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
 [node name="Slime" type="KinematicBody2D"]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-MAX_SPEED = 60
+MAX_SPEED = 50
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
@@ -149,14 +147,14 @@ position = Vector2( 0, -6 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/In_air = SubResource( 19 )
-anims/Jump = SubResource( 2 )
-anims/Land = SubResource( 6 )
-anims/Stand = SubResource( 7 )
-anims/Walk = SubResource( 3 )
+anims/In_air = SubResource( 2 )
+anims/Jump = SubResource( 3 )
+anims/Land = SubResource( 4 )
+anims/Stand = SubResource( 5 )
+anims/Walk = SubResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 4 )
+tree_root = SubResource( 19 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 5 )
+parameters/playback = SubResource( 20 )
