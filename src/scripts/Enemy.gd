@@ -11,11 +11,7 @@ func follow_path():
 	if !patrol_path:
 		return
 	var target = patrol_points[patrol_index]
-	print("target: ", target, "position: ", position)
-#	print("position: ", position)
-#	print("distance to point: ", position.distance_to(target))
-	if position.distance_to(target) < 10:
-#		print("reached point")
+	if position.distance_to(target) < 1:
 		patrol_index = wrapi(patrol_index + 1, 0, patrol_points.size())
 		target = patrol_points[patrol_index]
-	return target.normalized()
+	return (target - position).normalized()
