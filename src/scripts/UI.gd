@@ -15,11 +15,11 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("escape"):
 		get_tree().change_scene("res://scenes/UI.tscn")
-	if Input.is_action_just_pressed("move_down") and current_selection < entryCount - 1:
-		current_selection += 1
+	if Input.is_action_just_pressed("move_down"):
+		current_selection = wrapi(current_selection + 1, 0, entryCount)
 		set_current_selection(current_selection)
-	if Input.is_action_just_pressed("move_up") and current_selection > 0:
-		current_selection -= 1
+	if Input.is_action_just_pressed("move_up"):
+		current_selection = wrapi(current_selection - 1, 0, entryCount)
 		set_current_selection(current_selection)
 		
 	if Input.is_action_just_pressed("ui_accept"):

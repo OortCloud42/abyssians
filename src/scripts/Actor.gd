@@ -18,19 +18,19 @@ onready var stateMachine = $AnimationTree.get("parameters/playback")
 onready var animationTree = $AnimationTree
 
 
-func move_actor(delta, direction):
+func move_actor(delta, _direction):
 	motion.y += GRAVITY * delta
 	
 	if is_on_floor():
 		if direction.y < 0:
-			motion.y = JUMP_SPEED * direction.y
+			motion.y = JUMP_SPEED * _direction.y
 		if direction.x != 0:
-			motion.x = lerp(motion.x, MAX_SPEED * direction.x, ACCELERATION)
+			motion.x = lerp(motion.x, MAX_SPEED * _direction.x, ACCELERATION)
 		else:
 			motion.x = lerp(motion.x, 0, FRICTION)
 	else:
 		if direction.x != 0:
-			motion.x = lerp(motion.x, MAX_SPEED * direction.x, AIR_FRICTION)
+			motion.x = lerp(motion.x, MAX_SPEED * _direction.x, AIR_FRICTION)
 		else:
 			motion.x = lerp(motion.x, 0, AIR_FRICTION)
 	
