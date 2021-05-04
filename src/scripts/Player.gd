@@ -2,17 +2,22 @@ extends Actor
 
 class_name Player
 
+signal exited_screen(position)
+
 const main_menu = "res://scenes/UI.tscn"
+
+onready var visibility = $VisibilityNotifier2D
 
 func _physics_process(delta):
 	var keys = get_keys()
 	direction = get_direction()
 	
 	move_actor(delta, direction)
+	if !visibility.is_on_screen():
+		emit_signal("exited_screen", Vector2(position.x,position.y-3))
 	play_animations(direction)
 	
 	if keys["escape"] > 0:
-# warning-ignore:return_value_discarded
 		get_tree().change_scene(main_menu)
 
 
@@ -41,3 +46,4 @@ func play_animations(direction):
 			stateMachine.travel("Jump_up")
 		else:
 			stateMachine.travel("Jump_down")
+

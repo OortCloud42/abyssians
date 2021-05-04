@@ -5,7 +5,7 @@ class_name Slime
 func _ready():
 	if patrol_path:
 		patrol_points = get_node(patrol_path).curve.get_baked_points()
-		print("points:", patrol_points, " number of points: ", get_node(patrol_path).curve.get_point_count(), " closest point: ", get_node(patrol_path).curve.get_closest_point(position))
+#		print("points:", patrol_points, " number of points: ", get_node(patrol_path).curve.get_point_count(), " closest point: ", get_node(patrol_path).curve.get_closest_point(position))
 
 
 func _physics_process(delta):

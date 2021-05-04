@@ -42,10 +42,14 @@ config/name="Abyssians"
 run/main_scene="res://scenes/UI.tscn"
 config/icon="res://assets/icon.png"
 
+[debug]
+
+gdscript/warnings/return_value_discarded=false
+
 [display]
 
 window/size/width=320
-window/size/height=180
+window/size/height=176
 window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="2d"
@@ -93,3 +97,7 @@ move_down={
 [rendering]
 
 environment/default_environment="res://tilesets/default_env.tres"
+
+[world]
+
+2d/cell_size=1

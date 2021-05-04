@@ -56,7 +56,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-length = 0.3
+length = 0.4
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -66,7 +66,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.15 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 2 ]
@@ -82,7 +82,7 @@ animation = "Jump_up"
 animation = "Stand"
 
 [sub_resource type="AnimationNodeAnimation" id=9]
-animation = "Run"
+animation = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
@@ -102,8 +102,8 @@ states/Jump_up/position = Vector2( 224, 180 )
 states/Stand/node = SubResource( 8 )
 states/Stand/position = Vector2( 297, 83 )
 states/Walk/node = SubResource( 9 )
-states/Walk/position = Vector2( 483, 83 )
-transitions = [ "Stand", "Walk", SubResource( 10 ), "Walk", "Stand", SubResource( 11 ), "Stand", "Jump_up", SubResource( 12 ), "Jump_up", "Jump_down", SubResource( 13 ), "Jump_down", "Stand", SubResource( 14 ) ]
+states/Walk/position = Vector2( 528, 83 )
+transitions = [ "Stand", "Jump_up", SubResource( 10 ), "Jump_up", "Jump_down", SubResource( 11 ), "Jump_down", "Stand", SubResource( 12 ), "Stand", "Walk", SubResource( 13 ), "Walk", "Stand", SubResource( 14 ) ]
 start_node = "Stand"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=16]
@@ -134,3 +134,7 @@ tree_root = SubResource( 15 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 16 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 5.96046e-08, -7 )
+scale = Vector2( 0.3, 0.4 )
