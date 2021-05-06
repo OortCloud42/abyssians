@@ -1,10 +1,26 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://assets/abyssians-character.png" type="Texture" id=1]
+[ext_resource path="res://assets/player.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5, 7 )
+extents = Vector2( 5, 5 )
+
+[sub_resource type="Animation" id=17]
+resource_name = "Dead"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Jump_down"
@@ -41,7 +57,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "Stand"
 length = 0.05
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -72,6 +87,9 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "Dead"
+
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Jump_down"
 
@@ -94,7 +112,11 @@ animation = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
 [sub_resource type="AnimationNodeStateMachine" id=15]
+states/Dead/node = SubResource( 18 )
+states/Dead/position = Vector2( 98, 83 )
 states/Jump_down/node = SubResource( 6 )
 states/Jump_down/position = Vector2( 396, 180 )
 states/Jump_up/node = SubResource( 7 )
@@ -103,27 +125,26 @@ states/Stand/node = SubResource( 8 )
 states/Stand/position = Vector2( 297, 83 )
 states/Walk/node = SubResource( 9 )
 states/Walk/position = Vector2( 528, 83 )
-transitions = [ "Stand", "Jump_up", SubResource( 10 ), "Jump_up", "Jump_down", SubResource( 11 ), "Jump_down", "Stand", SubResource( 12 ), "Stand", "Walk", SubResource( 13 ), "Walk", "Stand", SubResource( 14 ) ]
+transitions = [ "Stand", "Jump_up", SubResource( 10 ), "Jump_up", "Jump_down", SubResource( 11 ), "Jump_down", "Stand", SubResource( 12 ), "Stand", "Walk", SubResource( 13 ), "Walk", "Stand", SubResource( 14 ), "Stand", "Dead", SubResource( 19 ) ]
 start_node = "Stand"
+end_node = "Dead"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
 texture = ExtResource( 1 )
-hframes = 5
+hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -7 )
+position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Dead = SubResource( 17 )
 anims/Jump_down = SubResource( 2 )
 anims/Jump_up = SubResource( 3 )
 anims/Stand = SubResource( 4 )
@@ -136,5 +157,5 @@ active = true
 parameters/playback = SubResource( 16 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 5.96046e-08, -7 )
+position = Vector2( 0, -5 )
 scale = Vector2( 0.3, 0.4 )

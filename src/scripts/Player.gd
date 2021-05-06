@@ -35,7 +35,11 @@ func get_keys():
 
 
 func play_animations(direction):
-	sprite.flip_h = direction.x < 0
+	if direction.x < 0:
+		sprite.flip_h = true
+	elif direction.x > 0:
+		sprite.flip_h = false
+	
 	if is_on_floor():
 		if direction.x != 0:
 			stateMachine.travel("Walk")

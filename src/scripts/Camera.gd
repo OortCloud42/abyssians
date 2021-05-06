@@ -10,9 +10,6 @@ func _ready():
 
 func _on_Player_exited_screen(position):
 	view_size = get_viewport_rect().size
-	print(view_size)
-	print(position)
-	print(self.position)
 	if self.position.x > position.x:
 		self.position.x -= view_size.x
 	elif self.position.y > position.y:
