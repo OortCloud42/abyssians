@@ -7,15 +7,34 @@ signal exited_screen(position)
 const main_menu = "res://scenes/UI.tscn"
 
 onready var visibility = $VisibilityNotifier2D
+onready var damageTimer = get_node("DamageTimer")
+onready var invincibleTimer = get_node("InvincibleTimer")
+onready var effectPlayer = get_node("EffectPlayer")
+
+var wasHit = false
+var knockedOut = false
+var invincible = false
 
 func _physics_process(delta):
 	var keys = get_keys()
-	direction = get_direction()
+	
+	if !wasHit:
+		if !knockedOut:
+			direction = get_direction()
+		else:
+			stateMachine.travel("Dead")
+	elif is_on_floor() and !knockedOut:
+		direction = Vector2.ZERO
+		wasHit = false
+		knockedOut = true
+		damageTimer.start(2)
 	
 	move_actor(delta, direction)
+	if !knockedOut:
+		play_animations(direction)
+	
 	if !visibility.is_on_screen():
 		emit_signal("exited_screen", Vector2(position.x,position.y-3))
-	play_animations(direction)
 	
 	if keys["escape"] > 0:
 		get_tree().change_scene(main_menu)
@@ -50,4 +69,28 @@ func play_animations(direction):
 			stateMachine.travel("Jump_up")
 		else:
 			stateMachine.travel("Jump_down")
+
+
+func _on_DamageTimer_timeout():
+	knockedOut = false
+	invincible = true
+	stateMachine.travel("Stand")
+	effectPlayer.play("Invincible")
+	invincibleTimer.start(3)
+
+
+func _on_InvincibleTimer_timeout():
+	invincible = false
+
+
+func _on_Area2D_body_entered(body):
+	if body.name != "TileMap" and !wasHit and body.name != "Player" and !knockedOut and !invincible:
+		if (position - body.position).normalized().x > 0:
+			direction = Vector2(1, -1)
+			motion = direction * MAX_SPEED / 2
+		else:
+			direction = Vector2(-1, -1)
+			motion = direction * MAX_SPEED / 2
+		wasHit = true
+
 

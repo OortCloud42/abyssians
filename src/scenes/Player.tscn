@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/player.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 5 )
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=2]
 resource_name = "Dead"
 length = 0.05
 tracks/0/type = "value"
@@ -22,8 +22,7 @@ tracks/0/keys = {
 "values": [ 5 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Jump_down"
+[sub_resource type="Animation" id=3]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -38,8 +37,7 @@ tracks/0/keys = {
 "values": [ 4 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Jump_up"
+[sub_resource type="Animation" id=4]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -54,8 +52,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Stand"
+[sub_resource type="Animation" id=5]
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -70,7 +67,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.4
 loop = true
 step = 0.05
@@ -87,24 +84,36 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=18]
-animation = "Dead"
-
-[sub_resource type="AnimationNodeAnimation" id=6]
-animation = "Jump_down"
+[sub_resource type="Animation" id=21]
+resource_name = "Invincible"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true ]
+}
 
 [sub_resource type="AnimationNodeAnimation" id=7]
-animation = "Jump_up"
+animation = "Dead"
 
 [sub_resource type="AnimationNodeAnimation" id=8]
-animation = "Stand"
+animation = "Jump_down"
 
 [sub_resource type="AnimationNodeAnimation" id=9]
+animation = "Jump_up"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "Stand"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Walk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=10]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=12]
 
@@ -112,24 +121,32 @@ animation = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
 
-[sub_resource type="AnimationNodeStateMachine" id=15]
-states/Dead/node = SubResource( 18 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachine" id=18]
+states/Dead/node = SubResource( 7 )
 states/Dead/position = Vector2( 98, 83 )
-states/Jump_down/node = SubResource( 6 )
+states/Jump_down/node = SubResource( 8 )
 states/Jump_down/position = Vector2( 396, 180 )
-states/Jump_up/node = SubResource( 7 )
+states/Jump_up/node = SubResource( 9 )
 states/Jump_up/position = Vector2( 224, 180 )
-states/Stand/node = SubResource( 8 )
+states/Stand/node = SubResource( 10 )
 states/Stand/position = Vector2( 297, 83 )
-states/Walk/node = SubResource( 9 )
+states/Walk/node = SubResource( 11 )
 states/Walk/position = Vector2( 528, 83 )
-transitions = [ "Stand", "Jump_up", SubResource( 10 ), "Jump_up", "Jump_down", SubResource( 11 ), "Jump_down", "Stand", SubResource( 12 ), "Stand", "Walk", SubResource( 13 ), "Walk", "Stand", SubResource( 14 ), "Stand", "Dead", SubResource( 19 ) ]
+transitions = [ "Stand", "Jump_up", SubResource( 12 ), "Jump_up", "Jump_down", SubResource( 13 ), "Jump_down", "Stand", SubResource( 14 ), "Stand", "Walk", SubResource( 15 ), "Walk", "Stand", SubResource( 16 ), "Stand", "Dead", SubResource( 17 ), "Dead", "Stand", SubResource( 22 ) ]
 start_node = "Stand"
-end_node = "Dead"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 6, 6 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -144,18 +161,37 @@ position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Dead = SubResource( 17 )
-anims/Jump_down = SubResource( 2 )
-anims/Jump_up = SubResource( 3 )
-anims/Stand = SubResource( 4 )
-anims/Walk = SubResource( 5 )
+anims/Dead = SubResource( 2 )
+anims/Jump_down = SubResource( 3 )
+anims/Jump_up = SubResource( 4 )
+anims/Stand = SubResource( 5 )
+anims/Walk = SubResource( 6 )
+
+[node name="EffectPlayer" type="AnimationPlayer" parent="."]
+anims/Invincible = SubResource( 21 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 15 )
+tree_root = SubResource( 18 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 16 )
+parameters/playback = SubResource( 19 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 0, -5 )
 scale = Vector2( 0.3, 0.4 )
+
+[node name="DamageTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="InvincibleTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -5 )
+shape = SubResource( 20 )
+
+[connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]
+[connection signal="timeout" from="InvincibleTimer" to="." method="_on_InvincibleTimer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
