@@ -6,7 +6,7 @@ export (NodePath) var patrol_path
 var patrol_points
 var patrol_index = 0
 
-
+# Makes the enemy sprite follow the desired path
 func follow_path():
 	if !patrol_path:
 		return

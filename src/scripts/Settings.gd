@@ -10,9 +10,11 @@ onready var selector_setting3 = $SettingsMenu/CenterContainer/VBoxContainer/Cent
 onready var selector_setting4 = $SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer/selector
 onready var selector_exit = $SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer/selector
 
+# Resets the current selection
 func _ready():
 	set_current_selection(0)
-	
+
+# Changes selection based on user input
 func _process(_delta):
 	if Input.is_action_just_pressed("move_down"):
 		current_selection = wrapi(current_selection + 1, 0, entryCount)
@@ -28,6 +30,7 @@ func _process(_delta):
 		set_current_selection(current_selection)
 		handle_selection(current_selection)
 
+# Changes scene based on selected entry
 func handle_selection(_current_selection):
 	match _current_selection:
 		0:
@@ -43,6 +46,7 @@ func handle_selection(_current_selection):
 
 var current_selection = 0
 
+# Places the selection marker in the correct place
 func set_current_selection(_current_selection):
 	selector_setting1.text = ""
 	selector_setting2.text = ""

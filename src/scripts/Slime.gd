@@ -7,7 +7,7 @@ func _ready():
 		patrol_points = get_node(patrol_path).curve.get_baked_points()
 #		print("points:", patrol_points, " number of points: ", get_node(patrol_path).curve.get_point_count(), " closest point: ", get_node(patrol_path).curve.get_closest_point(position))
 
-
+# Handles movement
 func _physics_process(delta):
 	if !patrol_path:
 		return
@@ -15,7 +15,7 @@ func _physics_process(delta):
 	move_actor(delta, direction)
 	play_animations(direction)
 
-
+# Plays animations based on current direction and position
 func play_animations(direction):
 	sprite.flip_h = direction.x < 0
 	if is_on_floor():

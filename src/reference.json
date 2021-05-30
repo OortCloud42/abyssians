@@ -1,0 +1,1025 @@
+{
+  "name": "Abyssians",
+  "description": "",
+  "version": null,
+  "classes": [
+    {
+      "name": "Collector.gd",
+      "path": "res://Collector.gd",
+      "extends_class": [
+        "SceneTree"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Collector.gd",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "find_files",
+          "return_type": "PoolStringArray",
+          "rpc_mode": 0,
+          "signature": "func find_files(dirpath: String = \"\", patterns: PoolStringArray = [], is_recursive: bool = false, do_skip_hidden: bool = true) -> PoolStringArray",
+          "description": "",
+          "arguments": [
+            {
+              "name": "dirpath",
+              "type": "String",
+              "default_value": ""
+            },
+            {
+              "name": "patterns",
+              "type": "PoolStringArray",
+              "default_value": [
+
+              ]
+            },
+            {
+              "name": "is_recursive",
+              "type": "bool",
+              "default_value": false
+            },
+            {
+              "name": "do_skip_hidden",
+              "type": "bool",
+              "default_value": true
+            }
+          ]
+        },
+        {
+          "name": "save_text",
+          "return_type": "null",
+          "rpc_mode": 0,
+          "signature": "func save_text(path: String = \"\", content: String = \"\") -> null",
+          "description": " Saves text to a file.\r\n",
+          "arguments": [
+            {
+              "name": "path",
+              "type": "String",
+              "default_value": ""
+            },
+            {
+              "name": "content",
+              "type": "String",
+              "default_value": ""
+            }
+          ]
+        },
+        {
+          "name": "get_reference",
+          "return_type": "Dictionary",
+          "rpc_mode": 0,
+          "signature": "func get_reference(files: PoolStringArray = [], refresh_cache: bool = false) -> Dictionary",
+          "description": " Parses a list of GDScript files and returns a list of dictionaries with the\r\n code reference data.\r\n\r\n If `refresh_cache` is true, will refresh Godot's cache and get fresh symbols.\r\n",
+          "arguments": [
+            {
+              "name": "files",
+              "type": "PoolStringArray",
+              "default_value": [
+
+              ]
+            },
+            {
+              "name": "refresh_cache",
+              "type": "bool",
+              "default_value": false
+            }
+          ]
+        },
+        {
+          "name": "print_pretty_json",
+          "return_type": "String",
+          "rpc_mode": 0,
+          "signature": "func print_pretty_json(reference: Dictionary) -> String",
+          "description": "",
+          "arguments": [
+            {
+              "name": "reference",
+              "type": "Dictionary"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "Actor",
+      "path": "res://scripts/Actor.gd",
+      "extends_class": [
+        "KinematicBody2D"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Actor",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+        {
+          "name": "ACCELERATION",
+          "data_type": "var",
+          "default_value": 1,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var ACCELERATION = 1",
+          "description": ""
+        },
+        {
+          "name": "MAX_SPEED",
+          "data_type": "var",
+          "default_value": 80,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var MAX_SPEED = 80",
+          "description": ""
+        },
+        {
+          "name": "FRICTION",
+          "data_type": "var",
+          "default_value": 1,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var FRICTION = 1",
+          "description": ""
+        },
+        {
+          "name": "AIR_FRICTION",
+          "data_type": "var",
+          "default_value": 0.5,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var AIR_FRICTION = 0.5",
+          "description": ""
+        },
+        {
+          "name": "GRAVITY",
+          "data_type": "var",
+          "default_value": 230,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var GRAVITY = 230",
+          "description": ""
+        },
+        {
+          "name": "JUMP_SPEED",
+          "data_type": "var",
+          "default_value": 120,
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var JUMP_SPEED = 120",
+          "description": ""
+        },
+        {
+          "name": "motion",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var motion",
+          "description": ""
+        },
+        {
+          "name": "direction",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var direction",
+          "description": ""
+        },
+        {
+          "name": "sprite",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var sprite",
+          "description": ""
+        },
+        {
+          "name": "animationPlayer",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var animationPlayer",
+          "description": ""
+        },
+        {
+          "name": "stateMachine",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var stateMachine",
+          "description": ""
+        },
+        {
+          "name": "animationTree",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var animationTree",
+          "description": ""
+        }
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "move_actor",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func move_actor(delta, _direction)",
+          "description": "",
+          "arguments": [
+            {
+              "name": "delta",
+              "type": "var"
+            },
+            {
+              "name": "_direction",
+              "type": "var"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "Enemy",
+      "path": "res://scripts/Enemy.gd",
+      "extends_class": [
+        "Actor"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Enemy",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+        {
+          "name": "patrol_path",
+          "data_type": "var",
+          "default_value": "",
+          "setter": "",
+          "getter": "",
+          "export": true,
+          "signature": "export var patrol_path = \"\"",
+          "description": ""
+        },
+        {
+          "name": "patrol_points",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var patrol_points",
+          "description": ""
+        },
+        {
+          "name": "patrol_index",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var patrol_index",
+          "description": ""
+        }
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "follow_path",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func follow_path()",
+          "description": " Makes the enemy sprite follow the desired path\n",
+          "arguments": [
+
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "Slime",
+      "path": "res://scripts/Slime.gd",
+      "extends_class": [
+        "Enemy"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Slime",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "_ready",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _ready()",
+          "description": "",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "_physics_process",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _physics_process(delta)",
+          "description": " Handles movement\n",
+          "arguments": [
+            {
+              "name": "delta",
+              "type": "var"
+            }
+          ]
+        },
+        {
+          "name": "play_animations",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func play_animations(direction)",
+          "description": " Plays animations based on current direction and position\n",
+          "arguments": [
+            {
+              "name": "direction",
+              "type": "var"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "Settings.gd",
+      "path": "res://scripts/Settings.gd",
+      "extends_class": [
+        "Control"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Settings.gd",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+        {
+          "name": "entryCount",
+          "value": 5,
+          "data_type": "int",
+          "signature": "const entryCount: int = 5",
+          "description": ""
+        },
+        {
+          "name": "main_menu",
+          "value": "res://scenes/UI.tscn",
+          "data_type": "String",
+          "signature": "const main_menu: String = \"res://scenes/UI.tscn\"",
+          "description": ""
+        }
+      ],
+      "members": [
+        {
+          "name": "selector_setting1",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var selector_setting1",
+          "description": ""
+        },
+        {
+          "name": "selector_setting2",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var selector_setting2",
+          "description": ""
+        },
+        {
+          "name": "selector_setting3",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var selector_setting3",
+          "description": ""
+        },
+        {
+          "name": "selector_setting4",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var selector_setting4",
+          "description": ""
+        },
+        {
+          "name": "selector_exit",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var selector_exit",
+          "description": ""
+        },
+        {
+          "name": "current_selection",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var current_selection",
+          "description": ""
+        }
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "_ready",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _ready()",
+          "description": " Resets the current selection\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "_process",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _process(_delta)",
+          "description": " Changes selection based on user input\n",
+          "arguments": [
+            {
+              "name": "_delta",
+              "type": "var"
+            }
+          ]
+        },
+        {
+          "name": "handle_selection",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func handle_selection(_current_selection)",
+          "description": " Changes scene based on selected entry\n",
+          "arguments": [
+            {
+              "name": "_current_selection",
+              "type": "var"
+            }
+          ]
+        },
+        {
+          "name": "set_current_selection",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func set_current_selection(_current_selection)",
+          "description": " Places the selection marker in the correct place\n",
+          "arguments": [
+            {
+              "name": "_current_selection",
+              "type": "var"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "Player",
+      "path": "res://scripts/Player.gd",
+      "extends_class": [
+        "Actor"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Player",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+        {
+          "name": "main_menu",
+          "value": "res://scenes/UI.tscn",
+          "data_type": "String",
+          "signature": "const main_menu: String = \"res://scenes/UI.tscn\"",
+          "description": ""
+        }
+      ],
+      "members": [
+        {
+          "name": "visibility",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var visibility",
+          "description": ""
+        },
+        {
+          "name": "damageTimer",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var damageTimer",
+          "description": ""
+        },
+        {
+          "name": "invincibleTimer",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var invincibleTimer",
+          "description": ""
+        },
+        {
+          "name": "effectPlayer",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var effectPlayer",
+          "description": ""
+        },
+        {
+          "name": "wasHit",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var wasHit",
+          "description": ""
+        },
+        {
+          "name": "knockedOut",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var knockedOut",
+          "description": ""
+        },
+        {
+          "name": "invincible",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var invincible",
+          "description": ""
+        }
+      ],
+      "signals": [
+        {
+          "name": "exited_screen",
+          "arguments": [
+            "position"
+          ],
+          "signature": "signal exited_screen(position)",
+          "description": " Calls the _on_Player_exited_screen() function which moves the camera when player exited visible screen space\n"
+        }
+      ],
+      "methods": [
+        {
+          "name": "_physics_process",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _physics_process(delta)",
+          "description": " Handles physics\n",
+          "arguments": [
+            {
+              "name": "delta",
+              "type": "var"
+            }
+          ]
+        },
+        {
+          "name": "get_direction",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func get_direction()",
+          "description": " Gets direction in which player should be moved based on keyboard inputs\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "get_keys",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func get_keys()",
+          "description": " Gets other non-movement related keys\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "play_animations",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func play_animations(direction)",
+          "description": " Plays player animations based on movement direction and position\n",
+          "arguments": [
+            {
+              "name": "direction",
+              "type": "var"
+            }
+          ]
+        },
+        {
+          "name": "_on_DamageTimer_timeout",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _on_DamageTimer_timeout()",
+          "description": " Initiates the invincibility timer after being stunned\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "_on_InvincibleTimer_timeout",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _on_InvincibleTimer_timeout()",
+          "description": " Disables invincibility after invincibility timer times out\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "_on_Area2D_body_entered",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _on_Area2D_body_entered(body)",
+          "description": " Checks if player collided with enemy\n",
+          "arguments": [
+            {
+              "name": "body",
+              "type": "var"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "Camera.gd",
+      "path": "res://scripts/Camera.gd",
+      "extends_class": [
+        "Camera2D"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class Camera.gd",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+        {
+          "name": "view_size",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var view_size",
+          "description": ""
+        }
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "_ready",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _ready()",
+          "description": "",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "_on_Player_exited_screen",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _on_Player_exited_screen(position)",
+          "description": " Moves the camera when player exits the visible screen space\n",
+          "arguments": [
+            {
+              "name": "position",
+              "type": "var"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "UI.gd",
+      "path": "res://scripts/UI.gd",
+      "extends_class": [
+        "Control"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class UI.gd",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+        {
+          "name": "world",
+          "value": "res://scenes/World.tscn",
+          "data_type": "String",
+          "signature": "const world: String = \"res://scenes/World.tscn\"",
+          "description": ""
+        },
+        {
+          "name": "entryCount",
+          "value": 3,
+          "data_type": "int",
+          "signature": "const entryCount: int = 3",
+          "description": ""
+        },
+        {
+          "name": "settings",
+          "value": "res://scenes/Settings.tscn",
+          "data_type": "String",
+          "signature": "const settings: String = \"res://scenes/Settings.tscn\"",
+          "description": ""
+        }
+      ],
+      "members": [
+        {
+          "name": "selector_start",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var selector_start",
+          "description": ""
+        },
+        {
+          "name": "selector_settings",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var selector_settings",
+          "description": ""
+        },
+        {
+          "name": "selector_exit",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var selector_exit",
+          "description": ""
+        },
+        {
+          "name": "current_selection",
+          "data_type": "var",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var current_selection",
+          "description": ""
+        }
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "_ready",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _ready()",
+          "description": " Resets the current selection\n",
+          "arguments": [
+
+          ]
+        },
+        {
+          "name": "_process",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func _process(_delta)",
+          "description": " Changes selection based on user input\n",
+          "arguments": [
+            {
+              "name": "_delta",
+              "type": "var"
+            }
+          ]
+        },
+        {
+          "name": "handle_selection",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func handle_selection(_current_selection)",
+          "description": " Changes scene based on selected entry\n",
+          "arguments": [
+            {
+              "name": "_current_selection",
+              "type": "var"
+            }
+          ]
+        },
+        {
+          "name": "set_current_selection",
+          "return_type": "var",
+          "rpc_mode": 0,
+          "signature": "func set_current_selection(_current_selection)",
+          "description": " Places the selection marker in the correct place\n",
+          "arguments": [
+            {
+              "name": "_current_selection",
+              "type": "var"
+            }
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    },
+    {
+      "name": "ReferenceCollectorCLI.gd",
+      "path": "res://ReferenceCollectorCLI.gd",
+      "extends_class": [
+        "SceneTree"
+      ],
+      "extends_file": "",
+      "icon": "",
+      "signature": "class ReferenceCollectorCLI.gd",
+      "description": "",
+      "sub_classes": [
+
+      ],
+      "constants": [
+
+      ],
+      "members": [
+        {
+          "name": "Collector",
+          "data_type": "SceneTree",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var Collector: SceneTree",
+          "description": ""
+        },
+        {
+          "name": "directories",
+          "data_type": "Array",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var directories: Array",
+          "description": " A list of directories to collect files from.\r\n"
+        },
+        {
+          "name": "is_recursive",
+          "data_type": "bool",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var is_recursive: bool",
+          "description": " If true, explore each directory recursively\r\n"
+        },
+        {
+          "name": "patterns",
+          "data_type": "Array",
+          "default_value": null,
+          "setter": "",
+          "getter": "",
+          "export": false,
+          "signature": "var patterns: Array",
+          "description": " A list of patterns to filter files.\r\n"
+        }
+      ],
+      "signals": [
+
+      ],
+      "methods": [
+        {
+          "name": "_init",
+          "return_type": "null",
+          "rpc_mode": 0,
+          "signature": "func _init() -> null",
+          "description": "",
+          "arguments": [
+
+          ]
+        }
+      ],
+      "static_functions": [
+
+      ]
+    }
+  ]
+}
