@@ -14,17 +14,23 @@
 export var patrol_path = ""
 ```
 
+enemy movement path
+
 ### patrol\_points
 
 ```gdscript
 var patrol_points
 ```
 
+collection of patrol path points
+
 ### patrol\_index
 
 ```gdscript
 var patrol_index
 ```
+
+aktualny punkt
 
 ## Method Descriptions
 

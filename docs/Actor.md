@@ -44,11 +44,15 @@ export var GRAVITY = 230
 export var JUMP_SPEED = 120
 ```
 
+more like jump force
+
 ### motion
 
 ```gdscript
 var motion
 ```
+
+speed, used by move_actor
 
 ### direction
 
@@ -56,11 +60,15 @@ var motion
 var direction
 ```
 
+direction
+
 ### sprite
 
 ```gdscript
 var sprite
 ```
+
+wygląd
 
 ### animationPlayer
 
@@ -68,17 +76,15 @@ var sprite
 var animationPlayer
 ```
 
+backend for animations, plays animations
+
 ### stateMachine
 
 ```gdscript
 var stateMachine
 ```
 
-### animationTree
-
-```gdscript
-var animationTree
-```
+animation tree
 
 ## Method Descriptions
 
@@ -88,3 +94,4 @@ var animationTree
 func move_actor(delta, _direction)
 ```
 
+Moves object based on ....

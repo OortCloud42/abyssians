@@ -22,11 +22,15 @@ const main_menu: String = "res://scenes/UI.tscn"
 var visibility
 ```
 
+sprawdzenie czy gracz jest widoczny na ekranie
+
 ### damageTimer
 
 ```gdscript
 var damageTimer
 ```
+
+more like nieprzytomność timer
 
 ### invincibleTimer
 
@@ -34,11 +38,15 @@ var damageTimer
 var invincibleTimer
 ```
 
+nietykalność timer
+
 ### effectPlayer
 
 ```gdscript
 var effectPlayer
 ```
+
+handles visual player effects
 
 ### wasHit
 
@@ -46,17 +54,23 @@ var effectPlayer
 var wasHit
 ```
 
+true when player is still flying
+
 ### knockedOut
 
 ```gdscript
 var knockedOut
 ```
 
+true when damagetimer is on, player knocked out
+
 ### invincible
 
 ```gdscript
 var invincible
 ```
+
+true when invincibletimer is on
 
 ## Method Descriptions
 

@@ -190,7 +190,7 @@
           "getter": "",
           "export": true,
           "signature": "export var JUMP_SPEED = 120",
-          "description": ""
+          "description": " more like jump force\n"
         },
         {
           "name": "motion",
@@ -200,7 +200,7 @@
           "getter": "",
           "export": false,
           "signature": "var motion",
-          "description": ""
+          "description": " speed, used by move_actor\n"
         },
         {
           "name": "direction",
@@ -210,7 +210,7 @@
           "getter": "",
           "export": false,
           "signature": "var direction",
-          "description": ""
+          "description": " direction\n"
         },
         {
           "name": "sprite",
@@ -220,7 +220,7 @@
           "getter": "",
           "export": false,
           "signature": "var sprite",
-          "description": ""
+          "description": " wygląd\n"
         },
         {
           "name": "animationPlayer",
@@ -230,7 +230,7 @@
           "getter": "",
           "export": false,
           "signature": "var animationPlayer",
-          "description": ""
+          "description": " backend for animations, plays animations\n"
         },
         {
           "name": "stateMachine",
@@ -240,17 +240,7 @@
           "getter": "",
           "export": false,
           "signature": "var stateMachine",
-          "description": ""
-        },
-        {
-          "name": "animationTree",
-          "data_type": "var",
-          "default_value": null,
-          "setter": "",
-          "getter": "",
-          "export": false,
-          "signature": "var animationTree",
-          "description": ""
+          "description": " animation tree\n"
         }
       ],
       "signals": [
@@ -262,7 +252,7 @@
           "return_type": "var",
           "rpc_mode": 0,
           "signature": "func move_actor(delta, _direction)",
-          "description": "",
+          "description": " Moves object based on ....\n",
           "arguments": [
             {
               "name": "delta",
@@ -304,7 +294,7 @@
           "getter": "",
           "export": true,
           "signature": "export var patrol_path = \"\"",
-          "description": ""
+          "description": " enemy movement path\n"
         },
         {
           "name": "patrol_points",
@@ -314,7 +304,7 @@
           "getter": "",
           "export": false,
           "signature": "var patrol_points",
-          "description": ""
+          "description": " collection of patrol path points\n"
         },
         {
           "name": "patrol_index",
@@ -324,7 +314,7 @@
           "getter": "",
           "export": false,
           "signature": "var patrol_index",
-          "description": ""
+          "description": " aktualny punkt\n"
         }
       ],
       "signals": [
@@ -374,7 +364,7 @@
           "return_type": "var",
           "rpc_mode": 0,
           "signature": "func _ready()",
-          "description": "",
+          "description": " calculates patrol points\n",
           "arguments": [
 
           ]
@@ -425,17 +415,17 @@
       ],
       "constants": [
         {
-          "name": "entryCount",
-          "value": 5,
-          "data_type": "int",
-          "signature": "const entryCount: int = 5",
-          "description": ""
-        },
-        {
           "name": "main_menu",
           "value": "res://scenes/UI.tscn",
           "data_type": "String",
           "signature": "const main_menu: String = \"res://scenes/UI.tscn\"",
+          "description": ""
+        },
+        {
+          "name": "entryCount",
+          "value": 5,
+          "data_type": "int",
+          "signature": "const entryCount: int = 5",
           "description": ""
         }
       ],
@@ -590,7 +580,7 @@
           "getter": "",
           "export": false,
           "signature": "var visibility",
-          "description": ""
+          "description": " sprawdzenie czy gracz jest widoczny na ekranie\n"
         },
         {
           "name": "damageTimer",
@@ -600,7 +590,7 @@
           "getter": "",
           "export": false,
           "signature": "var damageTimer",
-          "description": ""
+          "description": " more like nieprzytomność timer\n"
         },
         {
           "name": "invincibleTimer",
@@ -610,7 +600,7 @@
           "getter": "",
           "export": false,
           "signature": "var invincibleTimer",
-          "description": ""
+          "description": " nietykalność timer\n"
         },
         {
           "name": "effectPlayer",
@@ -620,7 +610,7 @@
           "getter": "",
           "export": false,
           "signature": "var effectPlayer",
-          "description": ""
+          "description": " handles visual player effects\n"
         },
         {
           "name": "wasHit",
@@ -630,7 +620,7 @@
           "getter": "",
           "export": false,
           "signature": "var wasHit",
-          "description": ""
+          "description": " true when player is still flying \n"
         },
         {
           "name": "knockedOut",
@@ -640,7 +630,7 @@
           "getter": "",
           "export": false,
           "signature": "var knockedOut",
-          "description": ""
+          "description": " true when damagetimer is on, player knocked out\n"
         },
         {
           "name": "invincible",
@@ -650,7 +640,7 @@
           "getter": "",
           "export": false,
           "signature": "var invincible",
-          "description": ""
+          "description": " true when invincibletimer is on\n"
         }
       ],
       "signals": [
@@ -669,7 +659,7 @@
           "return_type": "var",
           "rpc_mode": 0,
           "signature": "func _physics_process(delta)",
-          "description": " Handles physics\n",
+          "description": " Handles player's physics\n",
           "arguments": [
             {
               "name": "delta",
@@ -749,14 +739,14 @@
       ]
     },
     {
-      "name": "Camera.gd",
+      "name": "PlayerCamera",
       "path": "res://scripts/Camera.gd",
       "extends_class": [
         "Camera2D"
       ],
       "extends_file": "",
       "icon": "",
-      "signature": "class Camera.gd",
+      "signature": "class PlayerCamera",
       "description": "",
       "sub_classes": [
 
@@ -773,23 +763,13 @@
           "getter": "",
           "export": false,
           "signature": "var view_size",
-          "description": ""
+          "description": " camera rectangle size\n"
         }
       ],
       "signals": [
 
       ],
       "methods": [
-        {
-          "name": "_ready",
-          "return_type": "var",
-          "rpc_mode": 0,
-          "signature": "func _ready()",
-          "description": "",
-          "arguments": [
-
-          ]
-        },
         {
           "name": "_on_Player_exited_screen",
           "return_type": "var",
