@@ -1,5 +1,7 @@
 extends Control
 
+class_name MainMenu
+
 const world = "res://scenes/World.tscn"
 const settings = "res://scenes/Settings.tscn"
 

@@ -401,31 +401,31 @@
       ]
     },
     {
-      "name": "Settings.gd",
+      "name": "SettingsMenu",
       "path": "res://scripts/Settings.gd",
       "extends_class": [
         "Control"
       ],
       "extends_file": "",
       "icon": "",
-      "signature": "class Settings.gd",
+      "signature": "class SettingsMenu",
       "description": "",
       "sub_classes": [
 
       ],
       "constants": [
         {
-          "name": "main_menu",
-          "value": "res://scenes/UI.tscn",
-          "data_type": "String",
-          "signature": "const main_menu: String = \"res://scenes/UI.tscn\"",
-          "description": ""
-        },
-        {
           "name": "entryCount",
           "value": 5,
           "data_type": "int",
           "signature": "const entryCount: int = 5",
+          "description": ""
+        },
+        {
+          "name": "main_menu",
+          "value": "res://scenes/UI.tscn",
+          "data_type": "String",
+          "signature": "const main_menu: String = \"res://scenes/UI.tscn\"",
           "description": ""
         }
       ],
@@ -789,14 +789,14 @@
       ]
     },
     {
-      "name": "UI.gd",
+      "name": "MainMenu",
       "path": "res://scripts/UI.gd",
       "extends_class": [
         "Control"
       ],
       "extends_file": "",
       "icon": "",
-      "signature": "class UI.gd",
+      "signature": "class MainMenu",
       "description": "",
       "sub_classes": [
 

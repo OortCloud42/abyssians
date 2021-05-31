@@ -1,5 +1,7 @@
 extends Control
 
+class_name SettingsMenu
+
 const main_menu = "res://scenes/UI.tscn"
 
 const entryCount = 5
