@@ -2,6 +2,7 @@ extends Enemy
 
 class_name Slime
 
+# calculates patrol points
 func _ready():
 	if patrol_path:
 		patrol_points = get_node(patrol_path).curve.get_baked_points()

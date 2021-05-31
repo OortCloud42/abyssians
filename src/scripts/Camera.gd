@@ -1,11 +1,9 @@
 extends Camera2D
 
+class_name PlayerCamera
 
+# camera rectangle size
 var view_size
-
-func _ready():
-	pass
-
 
 # Moves the camera when player exits the visible screen space
 func _on_Player_exited_screen(position):

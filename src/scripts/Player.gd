@@ -7,16 +7,23 @@ signal exited_screen(position)
 
 const main_menu = "res://scenes/UI.tscn"
 
+# sprawdzenie czy gracz jest widoczny na ekranie
 onready var visibility = $VisibilityNotifier2D
+# more like nieprzytomność timer
 onready var damageTimer = get_node("DamageTimer")
+# nietykalność timer
 onready var invincibleTimer = get_node("InvincibleTimer")
+# handles visual player effects
 onready var effectPlayer = get_node("EffectPlayer")
 
+# true when player is still flying 
 var wasHit = false
+# true when damagetimer is on, player knocked out
 var knockedOut = false
+# true when invincibletimer is on
 var invincible = false
 
-# Handles physics
+# Handles player's physics
 func _physics_process(delta):
 	var keys = get_keys()
 	

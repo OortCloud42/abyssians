@@ -2,22 +2,32 @@ extends KinematicBody2D
 
 class_name Actor
 
+
 export var ACCELERATION = 1
 export var MAX_SPEED = 80
 export var FRICTION = 1
 export var AIR_FRICTION = 0.5
 export var GRAVITY = 230
+
+# more like jump force
 export var JUMP_SPEED = 120
 
+# speed, used by move_actor
 var motion = Vector2.ZERO
+
+# direction
 var direction = Vector2.ZERO
 
+# wygląd
 onready var sprite = $Sprite
+
+# backend for animations, plays animations
 onready var animationPlayer = $AnimationPlayer
+
+# animation tree
 onready var stateMachine = $AnimationTree.get("parameters/playback")
-onready var animationTree = $AnimationTree
 
-
+# Moves object based on ....
 func move_actor(delta, _direction):
 	motion.y += GRAVITY * delta
 	
