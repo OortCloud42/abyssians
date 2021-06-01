@@ -2,13 +2,19 @@ extends Control
 
 class_name MainMenu
 
+# World scene path
 const world = "res://scenes/World.tscn"
+# Settings menu scene path
 const settings = "res://scenes/Settings.tscn"
 
+# Menu entry count
 const entryCount = 3
 
+# Start selector, used for starting the game
 onready var selector_start = $MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/selector
+# Settings selector, used for switching to the settings menu
 onready var selector_settings = $MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/selector
+# Exit selector, used for exiting the game
 onready var selector_exit = $MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/selector
 
 # Resets the current selection
