@@ -14,6 +14,8 @@
 const main_menu: String = "res://scenes/UI.tscn"
 ```
 
+Main menu scene path
+
 ## Property Descriptions
 
 ### visibility
@@ -22,7 +24,7 @@ const main_menu: String = "res://scenes/UI.tscn"
 var visibility
 ```
 
-sprawdzenie czy gracz jest widoczny na ekranie
+Check if player is visible on screen, ussed for moving the camera
 
 ### damageTimer
 
@@ -30,7 +32,7 @@ sprawdzenie czy gracz jest widoczny na ekranie
 var damageTimer
 ```
 
-more like nieprzytomność timer
+Knock-out timer, controls the knocked-out state after taking damage
 
 ### invincibleTimer
 
@@ -38,7 +40,7 @@ more like nieprzytomność timer
 var invincibleTimer
 ```
 
-nietykalność timer
+Invincibilty timer, controls the short invincibility effect after taking damage to avoid getting stun-locked
 
 ### effectPlayer
 
@@ -46,7 +48,7 @@ nietykalność timer
 var effectPlayer
 ```
 
-handles visual player effects
+Handles visual effects
 
 ### wasHit
 
@@ -54,7 +56,7 @@ handles visual player effects
 var wasHit
 ```
 
-true when player is still flying
+True when player is still flying after getting knocked back
 
 ### knockedOut
 
@@ -62,7 +64,7 @@ true when player is still flying
 var knockedOut
 ```
 
-true when damagetimer is on, player knocked out
+True when damagetimer is on and player is knocked out
 
 ### invincible
 
@@ -70,7 +72,7 @@ true when damagetimer is on, player knocked out
 var invincible
 ```
 
-true when invincibletimer is on
+True when invincibletimer is on and player is invincible
 
 ## Method Descriptions
 

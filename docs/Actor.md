@@ -14,11 +14,15 @@
 export var ACCELERATION = 1
 ```
 
+How fast does the actor accelerate
+
 ### MAX\_SPEED
 
 ```gdscript
 export var MAX_SPEED = 80
 ```
+
+Maximum speed cap at which the actor can move
 
 ### FRICTION
 
@@ -26,11 +30,15 @@ export var MAX_SPEED = 80
 export var FRICTION = 1
 ```
 
+Reverse acceleration, how fast does the actor slow down without user input
+
 ### AIR\_FRICTION
 
 ```gdscript
 export var AIR_FRICTION = 0.5
 ```
+
+How fast does the actor slow down in air without user input
 
 ### GRAVITY
 
@@ -38,13 +46,15 @@ export var AIR_FRICTION = 0.5
 export var GRAVITY = 230
 ```
 
+How fast does the actor accelerate towards ground when in air
+
 ### JUMP\_SPEED
 
 ```gdscript
 export var JUMP_SPEED = 120
 ```
 
-more like jump force
+Jump force. how high can the actor jump
 
 ### motion
 
@@ -60,7 +70,7 @@ speed, used by move_actor
 var direction
 ```
 
-direction
+Direction in which the actor should move
 
 ### sprite
 
@@ -94,4 +104,5 @@ animation tree
 func move_actor(delta, _direction)
 ```
 
-Moves object based on ....
+Moves object based on direction, usually based on user input or pathfinding code
+Currently used for player class with get_direction()

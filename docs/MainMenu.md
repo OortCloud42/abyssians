@@ -52,6 +52,8 @@ var selector_exit
 var current_selection
 ```
 
+Current selection, used for selecting the desired setting and correct positioning of the cursor
+
 ## Method Descriptions
 
 ### handle\_selection

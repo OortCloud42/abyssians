@@ -14,11 +14,15 @@
 const entryCount: int = 5
 ```
 
+Menu entry count
+
 ### main\_menu
 
 ```gdscript
 const main_menu: String = "res://scenes/UI.tscn"
 ```
+
+Main UI scene path
 
 ## Property Descriptions
 
@@ -28,11 +32,15 @@ const main_menu: String = "res://scenes/UI.tscn"
 var selector_setting1
 ```
 
+First selector
+
 ### selector\_setting2
 
 ```gdscript
 var selector_setting2
 ```
+
+Second selector
 
 ### selector\_setting3
 
@@ -40,11 +48,15 @@ var selector_setting2
 var selector_setting3
 ```
 
+Third selector
+
 ### selector\_setting4
 
 ```gdscript
 var selector_setting4
 ```
+
+Fourth selector
 
 ### selector\_exit
 
@@ -52,11 +64,15 @@ var selector_setting4
 var selector_exit
 ```
 
+Last selector, used for exiting the settings menu
+
 ### current\_selection
 
 ```gdscript
 var current_selection
 ```
+
+Current selection, used for selecting the desired setting and correct positioning of the cursor
 
 ## Method Descriptions
 

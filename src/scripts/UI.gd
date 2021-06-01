@@ -39,6 +39,7 @@ func handle_selection(_current_selection):
 		2:
 			get_tree().quit()
 
+# Current selection, used for selecting the desired setting and correct positioning of the cursor
 var current_selection = 0
 
 # Places the selection marker in the correct place

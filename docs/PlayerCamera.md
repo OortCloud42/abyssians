@@ -14,4 +14,4 @@
 var view_size
 ```
 
-camera rectangle size
+Camera size

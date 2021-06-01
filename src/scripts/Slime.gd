@@ -2,13 +2,13 @@ extends Enemy
 
 class_name Slime
 
-# calculates patrol points
+# Calculares patrol points using the desired path
 func _ready():
 	if patrol_path:
 		patrol_points = get_node(patrol_path).curve.get_baked_points()
 #		print("points:", patrol_points, " number of points: ", get_node(patrol_path).curve.get_point_count(), " closest point: ", get_node(patrol_path).curve.get_closest_point(position))
 
-# Handles movement
+# Handles movmement on the patrol path
 func _physics_process(delta):
 	if !patrol_path:
 		return

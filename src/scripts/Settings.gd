@@ -2,14 +2,21 @@ extends Control
 
 class_name SettingsMenu
 
+# Main UI scene path
 const main_menu = "res://scenes/UI.tscn"
 
+# Menu entry count
 const entryCount = 5
 
+# First selector
 onready var selector_setting1 = $SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/selector
+# Second selector
 onready var selector_setting2 = $SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/selector
+# Third selector
 onready var selector_setting3 = $SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/selector
+# Fourth selector
 onready var selector_setting4 = $SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer/selector
+# Last selector, used for exiting the settings menu
 onready var selector_exit = $SettingsMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer/selector
 
 # Resets the current selection
@@ -46,6 +53,7 @@ func handle_selection(_current_selection):
 		4:
 			get_tree().change_scene(main_menu)
 
+# Current selection, used for selecting the desired setting and correct positioning of the cursor
 var current_selection = 0
 
 # Places the selection marker in the correct place

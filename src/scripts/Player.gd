@@ -5,22 +5,23 @@ class_name Player
 # Calls the _on_Player_exited_screen() function which moves the camera when player exited visible screen space
 signal exited_screen(position)
 
+# Main menu scene path
 const main_menu = "res://scenes/UI.tscn"
 
-# sprawdzenie czy gracz jest widoczny na ekranie
+# Check if player is visible on screen, ussed for moving the camera
 onready var visibility = $VisibilityNotifier2D
-# more like nieprzytomność timer
+# Knock-out timer, controls the knocked-out state after taking damage
 onready var damageTimer = get_node("DamageTimer")
-# nietykalność timer
+# Invincibilty timer, controls the short invincibility effect after taking damage to avoid getting stun-locked
 onready var invincibleTimer = get_node("InvincibleTimer")
-# handles visual player effects
+# Handles visual effects
 onready var effectPlayer = get_node("EffectPlayer")
 
-# true when player is still flying 
+# True when player is still flying after getting knocked back
 var wasHit = false
-# true when damagetimer is on, player knocked out
+# True when damagetimer is on and player is knocked out
 var knockedOut = false
-# true when invincibletimer is on
+# True when invincibletimer is on and player is invincible
 var invincible = false
 
 # Handles player's physics

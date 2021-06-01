@@ -2,7 +2,7 @@ extends Camera2D
 
 class_name PlayerCamera
 
-# camera rectangle size
+# Camera size
 var view_size
 
 # Moves the camera when player exits the visible screen space

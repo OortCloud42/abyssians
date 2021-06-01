@@ -14,7 +14,7 @@
 export var patrol_path = ""
 ```
 
-enemy movement path
+Pre-programmed path the enemy will patrol on
 
 ### patrol\_points
 
@@ -22,7 +22,7 @@ enemy movement path
 var patrol_points
 ```
 
-collection of patrol path points
+Collection of points on the patrol path
 
 ### patrol\_index
 
@@ -30,7 +30,7 @@ collection of patrol path points
 var patrol_index
 ```
 
-aktualny punkt
+Current point to which the enemy is currently trying to move
 
 ## Method Descriptions
 

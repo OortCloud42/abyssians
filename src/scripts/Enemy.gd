@@ -2,11 +2,11 @@ extends Actor
 
 class_name Enemy
 
-# enemy movement path
+# Pre-programmed path the enemy will patrol on
 export (NodePath) var patrol_path
-# collection of patrol path points
+# Collection of points on the patrol path
 var patrol_points
-# aktualny punkt
+# Current point to which the enemy is currently trying to move
 var patrol_index = 0
 
 # Makes the enemy sprite follow the desired path
