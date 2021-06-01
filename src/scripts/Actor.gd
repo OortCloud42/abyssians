@@ -16,22 +16,22 @@ export var GRAVITY = 230
 # Jump force. how high can the actor jump
 export var JUMP_SPEED = 120
 
-# speed, used by move_actor
+# Speed and direction of motion, used by move_actor
 var motion = Vector2.ZERO
 
 # Direction in which the actor should move
 var direction = Vector2.ZERO
 
-# wygląd
+# Appearance of the actor
 onready var sprite = $Sprite
 
-# backend for animations, plays animations
+# Handles animations
 onready var animationPlayer = $AnimationPlayer
 
-# animation tree
+# Animation tree, allows easy switching between animations
 onready var stateMachine = $AnimationTree.get("parameters/playback")
 
-# Moves object based on direction, usually based on user input or pathfinding code
+# Moves object based on direction, usually based on user input or pathfinding code\
 # Currently used for player class with get_direction()
 func move_actor(delta, _direction):
 	motion.y += GRAVITY * delta
