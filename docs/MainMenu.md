@@ -14,17 +14,23 @@
 const entryCount: int = 3
 ```
 
+Menu entry count
+
 ### settings
 
 ```gdscript
 const settings: String = "res://scenes/Settings.tscn"
 ```
 
+Settings menu scene path
+
 ### world
 
 ```gdscript
 const world: String = "res://scenes/World.tscn"
 ```
+
+World scene path
 
 ## Property Descriptions
 
@@ -34,17 +40,23 @@ const world: String = "res://scenes/World.tscn"
 var selector_start
 ```
 
+Start selector, used for starting the game
+
 ### selector\_settings
 
 ```gdscript
 var selector_settings
 ```
 
+Settings selector, used for switching to the settings menu
+
 ### selector\_exit
 
 ```gdscript
 var selector_exit
 ```
+
+Exit selector, used for exiting the game
 
 ### current\_selection
 

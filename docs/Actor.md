@@ -62,7 +62,7 @@ Jump force. how high can the actor jump
 var motion
 ```
 
-speed, used by move_actor
+Speed and direction of motion, used by move_actor
 
 ### direction
 
@@ -78,7 +78,7 @@ Direction in which the actor should move
 var sprite
 ```
 
-wygląd
+Appearance of the actor
 
 ### animationPlayer
 
@@ -86,7 +86,7 @@ wygląd
 var animationPlayer
 ```
 
-backend for animations, plays animations
+Handles animations
 
 ### stateMachine
 
@@ -94,7 +94,7 @@ backend for animations, plays animations
 var stateMachine
 ```
 
-animation tree
+Animation tree, allows easy switching between animations
 
 ## Method Descriptions
 
@@ -104,5 +104,5 @@ animation tree
 func move_actor(delta, _direction)
 ```
 
-Moves object based on direction, usually based on user input or pathfinding code
+Moves object based on direction, usually based on user input or pathfinding code\
 Currently used for player class with get_direction()
