@@ -111,6 +111,8 @@ graph_offset = Vector2( -188.17, 11.872 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=17]
 
 [node name="Slime" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource( 2 )
 MAX_SPEED = 50
 

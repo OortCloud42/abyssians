@@ -10,6 +10,7 @@ onready var visibility = $VisibilityNotifier2D
 onready var damageTimer = get_node("DamageTimer")
 onready var invincibleTimer = get_node("InvincibleTimer")
 onready var effectPlayer = get_node("EffectPlayer")
+onready var hitbox = $Area2D
 
 var wasHit = false
 var knockedOut = false
@@ -81,16 +82,23 @@ func _on_DamageTimer_timeout():
 
 func _on_InvincibleTimer_timeout():
 	invincible = false
+	hitbox.set_monitoring(false)
+	hitbox.set_monitoring(true)
 
 
 func _on_Area2D_body_entered(body):
-	if body.name != "TileMap" and !wasHit and body.name != "Player" and !knockedOut and !invincible:
+	if !wasHit and !knockedOut and !invincible:
 		if (position - body.position).normalized().x > 0:
+#			set_deferred("direction", Vector2(1, -1))
 			direction = Vector2(1, -1)
+#			set_deferred("motion", direction * MAX_SPEED / 2)
 			motion = direction * MAX_SPEED / 2
 		else:
+#			set_deferred("direction", Vector2(-1, -1))
 			direction = Vector2(-1, -1)
+#			set_deferred("motion", direction * MAX_SPEED / 2)
 			motion = direction * MAX_SPEED / 2
-		wasHit = true
+#		wasHit = true
+		set_deferred("wasHit", true)
 
 

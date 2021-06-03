@@ -84,7 +84,7 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=7]
 resource_name = "Invincible"
 length = 3.0
 tracks/0/type = "value"
@@ -100,22 +100,20 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Dead"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "Jump_down"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Jump_up"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Stand"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "Walk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
@@ -127,28 +125,31 @@ animation = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
-[sub_resource type="AnimationNodeStateMachine" id=18]
-states/Dead/node = SubResource( 7 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachine" id=20]
+states/Dead/node = SubResource( 8 )
 states/Dead/position = Vector2( 98, 83 )
-states/Jump_down/node = SubResource( 8 )
+states/Jump_down/node = SubResource( 9 )
 states/Jump_down/position = Vector2( 396, 180 )
-states/Jump_up/node = SubResource( 9 )
+states/Jump_up/node = SubResource( 10 )
 states/Jump_up/position = Vector2( 224, 180 )
-states/Stand/node = SubResource( 10 )
+states/Stand/node = SubResource( 11 )
 states/Stand/position = Vector2( 297, 83 )
-states/Walk/node = SubResource( 11 )
+states/Walk/node = SubResource( 12 )
 states/Walk/position = Vector2( 528, 83 )
-transitions = [ "Stand", "Jump_up", SubResource( 12 ), "Jump_up", "Jump_down", SubResource( 13 ), "Jump_down", "Stand", SubResource( 14 ), "Stand", "Walk", SubResource( 15 ), "Walk", "Stand", SubResource( 16 ), "Stand", "Dead", SubResource( 17 ), "Dead", "Stand", SubResource( 22 ) ]
+transitions = [ "Stand", "Jump_up", SubResource( 13 ), "Jump_up", "Jump_down", SubResource( 14 ), "Jump_down", "Stand", SubResource( 15 ), "Stand", "Walk", SubResource( 16 ), "Walk", "Stand", SubResource( 17 ), "Stand", "Dead", SubResource( 18 ), "Dead", "Stand", SubResource( 19 ) ]
 start_node = "Stand"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=21]
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 6, 6 )
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -168,13 +169,13 @@ anims/Stand = SubResource( 5 )
 anims/Walk = SubResource( 6 )
 
 [node name="EffectPlayer" type="AnimationPlayer" parent="."]
-anims/Invincible = SubResource( 21 )
+anims/Invincible = SubResource( 7 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 18 )
+tree_root = SubResource( 20 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 19 )
+parameters/playback = SubResource( 21 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 0, -5 )
@@ -187,10 +188,12 @@ one_shot = true
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -5 )
-shape = SubResource( 20 )
+shape = SubResource( 22 )
 
 [connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]
 [connection signal="timeout" from="InvincibleTimer" to="." method="_on_InvincibleTimer_timeout"]
