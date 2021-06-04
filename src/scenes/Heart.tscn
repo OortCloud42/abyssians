@@ -1,23 +1,20 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/walls.png" type="Texture" id=1]
-[ext_resource path="res://scripts/Coin.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Heart.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3, 3 )
+extents = Vector2( 4, 4 )
 
-[node name="Coin" type="Node2D"]
+[node name="Heart" type="Node2D"]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
 texture = ExtResource( 1 )
-hframes = 2
+hframes = 3
 region_enabled = true
-region_rect = Rect2( 224, 0, 32, 16 )
+region_rect = Rect2( 192, 224, 48, 16 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16

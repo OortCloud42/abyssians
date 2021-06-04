@@ -19,7 +19,8 @@ onready var effectPlayer = get_node("EffectPlayer")
 onready var hitbox = $Area2D
 
 var coins: int = 0
-var lifes: int = 3
+var lifes: float = 3
+const max_hp = 5
 
 # True when player is still flying after getting knocked back
 var wasHit := false
@@ -40,6 +41,7 @@ func _physics_process(delta):
 			stateMachine.travel("Dead")
 	
 	elif is_on_floor() and !knockedOut:
+		print(lifes)
 		direction = Vector2.ZERO
 		wasHit = false
 		knockedOut = true
@@ -47,7 +49,7 @@ func _physics_process(delta):
 		if lifes >=1:
 			damageTimer.start(2)
 		else:
-			pass # gameover
+			print("gameover")
 	
 	move_actor(delta, direction)
 	if !knockedOut:
@@ -97,6 +99,18 @@ func play_animations(direction : Vector2):
 func add_coins(amount : int):
 	coins += amount
 	return true
+
+
+func add_lifes(amount : float):
+	if lifes < max_hp:
+		if lifes + amount < max_hp:
+			lifes += amount
+		else:
+			lifes = max_hp
+		print(lifes)
+		return true
+	else:
+		return false
 
 
 # Initiates the invincibility timer after being stunned

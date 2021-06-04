@@ -17,12 +17,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Coin",
 "language": "GDScript",
-"path": "res://Coin.gd"
+"path": "res://scripts/Coin.gd"
 }, {
 "base": "Actor",
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://scripts/Enemy.gd"
+}, {
+"base": "Node2D",
+"class": "Heart",
+"language": "GDScript",
+"path": "res://scripts/Heart.gd"
 }, {
 "base": "Control",
 "class": "MainMenu",
@@ -53,6 +58,7 @@ _global_script_class_icons={
 "Actor": "",
 "Coin": "",
 "Enemy": "",
+"Heart": "",
 "MainMenu": "",
 "Player": "",
 "PlayerCamera": "",
