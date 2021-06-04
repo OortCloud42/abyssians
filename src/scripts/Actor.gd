@@ -33,7 +33,7 @@ onready var stateMachine = $AnimationTree.get("parameters/playback")
 
 # Moves object based on direction, usually based on user input or pathfinding code\
 # Currently used for player class with get_direction()
-func move_actor(delta, _direction):
+func move_actor(delta, _direction : Vector2):
 	motion.y += GRAVITY * delta
 	
 	if is_on_floor():
@@ -50,4 +50,3 @@ func move_actor(delta, _direction):
 			motion.x = lerp(motion.x, 0, AIR_FRICTION)
 	
 	motion = move_and_slide(motion, Vector2.UP)
-

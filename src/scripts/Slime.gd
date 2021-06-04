@@ -17,7 +17,7 @@ func _physics_process(delta):
 	play_animations(direction)
 
 # Plays animations based on current direction and position
-func play_animations(direction):
+func play_animations(direction : Vector2):
 	sprite.flip_h = direction.x < 0
 	if is_on_floor():
 		if motion.x != 0:
