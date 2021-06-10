@@ -4,6 +4,7 @@ class_name Player
 
 # Calls the _on_Player_exited_screen() function which moves the camera when player exited visible screen space
 signal exited_screen(position)
+signal hearts_update(lifes)
 
 # Main menu scene path
 const main_menu = "res://scenes/UI.tscn"
@@ -97,17 +98,21 @@ func play_animations(direction : Vector2):
 
 
 func add_coins(amount : int):
-	coins += amount
-	return true
+	if !wasHit and !knockedOut:
+		coins += amount
+		return true
+	else:
+		return false
 
 
 func add_lifes(amount : float):
-	if lifes < max_hp:
+	if lifes < max_hp and !wasHit and !knockedOut:
 		if lifes + amount < max_hp:
 			lifes += amount
 		else:
 			lifes = max_hp
 		print(lifes)
+		emit_signal("hearts_update", lifes)
 		return true
 	else:
 		return false
@@ -145,3 +150,4 @@ func _on_Area2D_body_entered(body : Node):
 #		wasHit = true
 		lifes -= 1
 		set_deferred("wasHit", true)
+		emit_signal("hearts_update", lifes)

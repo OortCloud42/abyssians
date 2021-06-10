@@ -1,4 +1,4 @@
-[gd_scene load_steps=299 format=2]
+[gd_scene load_steps=300 format=2]
 
 [ext_resource path="res://assets/walls.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://tilesets/candle.tres" type="Texture" id=5]
 [ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Heart.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -2870,10 +2871,13 @@ position = Vector2( 56, 256 )
 Type = 1
 
 [node name="Heart" parent="." instance=ExtResource( 7 )]
-position = Vector2( 72, 48 )
+position = Vector2( 24, 96 )
 Type = 2
 
 [node name="Heart2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 88, 48 )
+position = Vector2( 296, 112 )
+
+[node name="HUD" parent="." instance=ExtResource( 8 )]
 
 [connection signal="exited_screen" from="Player" to="Camera2D" method="_on_Player_exited_screen"]
+[connection signal="hearts_update" from="Player" to="HUD" method="_on_Player_hearts_update"]
