@@ -4,7 +4,6 @@ class_name Coin
 
 # Defines the coin's hitbox
 onready var hitbox = $Area2D/CollisionShape2D
-onready var area = $Area2D
 # Defines the coin's sprite
 onready var sprite = $Sprite
 
