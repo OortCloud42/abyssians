@@ -17,3 +17,26 @@ b) zamknięcie pomieszczenia nie pozwalając graczowi na ucieczke
 Unikamy:
 Pomijania walk przez zmianę pomieszczenia i kopiowania przedmiotów
 
+Gracz wskakuje na przeciwnika.
+Przewidujemy: 
+otrzymanie obrażeń od przeciwnika.
+Unikamy: 
+wskakiwania na przecwnika i jazdy na nim. 
+
+Kolizja grzacza z przeciwnikiem: 
+oczekujemy:
+otrzymania obrażeń.
+Możliwe problemy: 
+brak otrzymania obrażeń, dziwne błędy fizyki przeciwnika.
+
+Gracz posiada niewrażliwość: 
+oczekujemy: 
+gracz nie otrzymuje obrażeń, dodatkowo jest niewrażliwy na kolizje z przeciwnikami.
+Możliwe problemy: 
+gracz mimo wszystko otrzymuje obrażenia.
+
+Gracz traci wszyskie życia:
+oczekujemy:
+postać upada i nie może się ruszać. Możliwy jest tylko powrót do menu.
+Możliwe problemy: 
+Gracz nadal żyje i może się poruszać. 
