@@ -96,7 +96,7 @@ func play_animations(direction : Vector2):
 		else:
 			stateMachine.travel("Jump_down")
 
-
+# Adds coins on collision with coin sprite
 func add_coins(amount : int):
 	if !wasHit and !knockedOut:
 		coins += amount
@@ -104,7 +104,7 @@ func add_coins(amount : int):
 	else:
 		return false
 
-
+# Adds lives on collision with coin sprite
 func add_lifes(amount : float):
 	if lifes < max_hp and !wasHit and !knockedOut:
 		if lifes + amount < max_hp:
