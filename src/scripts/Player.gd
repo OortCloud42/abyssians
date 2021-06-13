@@ -4,6 +4,7 @@ class_name Player
 
 # Calls the _on_Player_exited_screen() function which moves the camera when player exited visible screen space
 signal exited_screen(position)
+
 signal hearts_update(lifes)
 
 # Main menu scene path
@@ -17,10 +18,14 @@ onready var damageTimer = get_node("DamageTimer")
 onready var invincibleTimer = get_node("InvincibleTimer")
 # Handles visual effects
 onready var effectPlayer = get_node("EffectPlayer")
+# Player's hitbox
 onready var hitbox = $Area2D
 
+# Number of coins
 var coins: int = 0
+# Number of lives
 var lifes: float = 3
+# Max number of lives
 const max_hp = 5
 
 # True when player is still flying after getting knocked back

@@ -46,3 +46,4 @@ export var Type = 0
 var value: int
 ```
 
+Value of the coin, based on type

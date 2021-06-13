@@ -22,6 +22,8 @@ Main menu scene path
 const max_hp: int = 5
 ```
 
+Max number of lives
+
 ## Property Descriptions
 
 ### visibility
@@ -62,17 +64,23 @@ Handles visual effects
 var hitbox
 ```
 
+Player's hitbox
+
 ### coins
 
 ```gdscript
 var coins: int = 0
 ```
 
+Number of coins
+
 ### lifes
 
 ```gdscript
 var lifes: float = 3
 ```
+
+Number of lives
 
 ### wasHit
 

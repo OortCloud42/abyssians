@@ -11,6 +11,7 @@ onready var sprite = $Sprite
 enum Size {Small, Big}
 export (Size) var Type = Size.Small
 
+# Value of the coin, based on type
 var value : int
 
 # Sets correct hitbox and sprite sizes based on coin type
