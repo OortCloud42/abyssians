@@ -14,6 +14,8 @@
 const Size: Dictionary = {"Big":2,"Medium":1,"Small":0}
 ```
 
+Possible heart sizes
+
 ## Property Descriptions
 
 ### hitbox
@@ -22,17 +24,15 @@ const Size: Dictionary = {"Big":2,"Medium":1,"Small":0}
 var hitbox
 ```
 
-### area
-
-```gdscript
-var area
-```
+Defines the heart's hitbox
 
 ### sprite
 
 ```gdscript
 var sprite
 ```
+
+Defines the heart's sprite
 
 ### Type
 
@@ -46,3 +46,4 @@ export var Type = 0
 var value: float
 ```
 
+Value of the heart, based on type

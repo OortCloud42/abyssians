@@ -14,7 +14,7 @@ export (Size) var Type = Size.Small
 # Value of the coin, based on type
 var value : int
 
-# Sets correct hitbox and sprite sizes based on coin type
+# Sets correct value and hitbox and sprite sizes based on coin type
 func _ready():
 	if Type == Size.Small:
 		hitbox.get_shape().set_extents(Vector2(3, 3))

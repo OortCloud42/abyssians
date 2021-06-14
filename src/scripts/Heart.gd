@@ -2,17 +2,19 @@ extends Node2D
 
 class_name Heart
 
+# Defines the heart's hitbox
 onready var hitbox = $Area2D/CollisionShape2D
-onready var area = $Area2D
+# Defines the heart's sprite
 onready var sprite = $Sprite
 
-
+# Possible heart sizes
 enum Size {Small, Medium, Big}
 export (Size) var Type = Size.Small
 
+# Value of the heart, based on type
 var value : float
 
-
+# Sets correct value and hitbox and sprite sizes based on heart type
 func _ready():
 	if Type == Size.Small:
 		hitbox.get_shape().set_extents(Vector2(4, 4))
@@ -27,7 +29,7 @@ func _ready():
 		sprite.set_frame(2)
 		value = 3
 
-
+# Adds lives on collision with player
 func _on_Area2D_body_entered(body : Node):
 	if body.add_lifes(value):
 		queue_free()
