@@ -5,6 +5,7 @@ class_name Player
 # Calls the _on_Player_exited_screen() function which moves the camera when player exited visible screen space
 signal exited_screen(position)
 
+# Calls the _on_Player_hearts_update() function which updates hearts on HUD
 signal hearts_update(lifes)
 
 # Main menu scene path
