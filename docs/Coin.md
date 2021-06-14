@@ -40,6 +40,8 @@ Defines the coin's sprite
 export var Type = 0
 ```
 
+Sets coin type based on size
+
 ### value
 
 ```gdscript

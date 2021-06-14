@@ -9,6 +9,7 @@ onready var sprite = $Sprite
 
 # Possible heart sizes
 enum Size {Small, Medium, Big}
+# Sets heart type based on size
 export (Size) var Type = Size.Small
 
 # Value of the heart, based on type

@@ -40,6 +40,8 @@ Defines the heart's sprite
 export var Type = 0
 ```
 
+Sets heart type based on size
+
 ### value
 
 ```gdscript

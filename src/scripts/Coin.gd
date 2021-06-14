@@ -9,6 +9,8 @@ onready var sprite = $Sprite
 
 # Possible coin sizes
 enum Size {Small, Big}
+
+# Sets coin type based on size
 export (Size) var Type = Size.Small
 
 # Value of the coin, based on type
