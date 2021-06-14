@@ -8,10 +8,33 @@
 
 ## Property Descriptions
 
-### hearts
+### heart1
 
 ```gdscript
-var hearts
+var heart1
 ```
 
-Heart sprites
+### heart2
+
+```gdscript
+var heart2
+```
+
+### heart3
+
+```gdscript
+var heart3
+```
+
+### heart4
+
+```gdscript
+var heart4
+```
+
+### heart5
+
+```gdscript
+var heart5
+```
+
