@@ -36,9 +36,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/CenterContainer"]
 margin_left = 55.0
-margin_top = 34.0
+margin_top = 31.0
 margin_right = 265.0
-margin_bottom = 142.0
+margin_bottom = 145.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -59,7 +59,7 @@ text = "Abyssians"
 [node name="CenterContainer2" type="CenterContainer" parent="MainMenu/CenterContainer/VBoxContainer"]
 margin_top = 52.0
 margin_right = 210.0
-margin_bottom = 108.0
+margin_bottom = 114.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -67,19 +67,19 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2"]
 margin_left = 69.0
 margin_right = 140.0
-margin_bottom = 56.0
+margin_bottom = 62.0
 
 [node name="CenterContainer" type="CenterContainer" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_right = 71.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
 margin_right = 71.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 
 [node name="selector" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_right = 7.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 rect_min_size = Vector2( 7, 0 )
 custom_fonts/font = ExtResource( 1 )
 text = ">"
@@ -87,23 +87,23 @@ text = ">"
 [node name="option" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_left = 11.0
 margin_right = 71.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 rect_min_size = Vector2( 60, 0 )
 custom_fonts/font = ExtResource( 1 )
 text = "Start"
 
 [node name="CenterContainer2" type="CenterContainer" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_top = 20.0
+margin_top = 22.0
 margin_right = 71.0
-margin_bottom = 36.0
+margin_bottom = 40.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
 margin_right = 71.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 
 [node name="selector" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
 margin_right = 7.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 rect_min_size = Vector2( 7, 0 )
 custom_fonts/font = ExtResource( 1 )
 text = ">"
@@ -111,23 +111,23 @@ text = ">"
 [node name="option" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
 margin_left = 11.0
 margin_right = 71.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 rect_min_size = Vector2( 60, 0 )
 custom_fonts/font = ExtResource( 1 )
 text = "Settings"
 
 [node name="CenterContainer3" type="CenterContainer" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_top = 40.0
+margin_top = 44.0
 margin_right = 71.0
-margin_bottom = 56.0
+margin_bottom = 62.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3"]
 margin_right = 71.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 
 [node name="selector" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 margin_right = 7.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 rect_min_size = Vector2( 7, 0 )
 custom_fonts/font = ExtResource( 1 )
 text = ">"
@@ -135,7 +135,7 @@ text = ">"
 [node name="option" type="Label" parent="MainMenu/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 margin_left = 11.0
 margin_right = 71.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 rect_min_size = Vector2( 60, 0 )
 custom_fonts/font = ExtResource( 1 )
 text = "Exit"

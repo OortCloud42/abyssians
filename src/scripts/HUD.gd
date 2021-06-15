@@ -55,6 +55,6 @@ func _on_Player_hearts_update(lifes):
 		hearts[3].frame = 2
 		hearts[4].frame = (lifes - 4) * 2
 
-
+# Updates coins on HUD when number of coins changes
 func _on_Player_coins_update(coins):
 	coincounter.text = str(coins).pad_zeros(4)
