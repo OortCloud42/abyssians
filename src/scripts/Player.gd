@@ -4,6 +4,8 @@ class_name Player
 
 # Calls the _on_Player_exited_screen() function which moves the camera when player exited visible screen space
 signal exited_screen(position)
+
+# Calls the _on_Player_hearts_update() function which updates hearts on HUD
 signal hearts_update(lifes)
 signal coins_update(coins)
 
@@ -18,10 +20,14 @@ onready var damageTimer = get_node("DamageTimer")
 onready var invincibleTimer = get_node("InvincibleTimer")
 # Handles visual effects
 onready var effectPlayer = get_node("EffectPlayer")
+# Player's hitbox
 onready var hitbox = $Area2D
 
+# Number of coins
 var coins: int = 0
+# Number of lives
 var lifes: float = 3
+# Max number of lives
 const max_hp = 5
 
 # True when player is still flying after getting knocked back
@@ -97,7 +103,7 @@ func play_animations(direction : Vector2):
 		else:
 			stateMachine.travel("Jump_down")
 
-
+# Adds coins on collision with coin sprite
 func add_coins(amount : int):
 	if !wasHit and !knockedOut:
 		coins += amount
@@ -106,7 +112,7 @@ func add_coins(amount : int):
 	else:
 		return false
 
-
+# Adds lives on collision with coin sprite
 func add_lifes(amount : float):
 	if lifes < max_hp and !wasHit and !knockedOut:
 		if lifes + amount < max_hp:

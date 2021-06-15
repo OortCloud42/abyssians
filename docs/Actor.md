@@ -101,7 +101,7 @@ Animation tree, allows easy switching between animations
 ### move\_actor
 
 ```gdscript
-func move_actor(delta, _direction)
+func move_actor(delta, _direction: Vector2)
 ```
 
 Moves object based on direction, usually based on user input or pathfinding code\

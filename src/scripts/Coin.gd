@@ -2,16 +2,21 @@ extends Node2D
 
 class_name Coin
 
+# Defines the coin's hitbox
 onready var hitbox = $Area2D/CollisionShape2D
-onready var area = $Area2D
+# Defines the coin's sprite
 onready var sprite = $Sprite
 
+# Possible coin sizes
 enum Size {Small, Big}
+
+# Sets coin type based on size
 export (Size) var Type = Size.Small
 
+# Value of the coin, based on type
 var value : int
 
-
+# Sets correct value and hitbox and sprite sizes based on coin type
 func _ready():
 	if Type == Size.Small:
 		hitbox.get_shape().set_extents(Vector2(3, 3))
@@ -22,7 +27,7 @@ func _ready():
 		sprite.set_frame(1)
 		value = 3
 
-
+# Adds coins on collision with player
 func _on_Area2D_body_entered(body : Node):
 	if body.add_coins(value):
 		queue_free()

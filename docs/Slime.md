@@ -11,7 +11,7 @@
 ### play\_animations
 
 ```gdscript
-func play_animations(direction)
+func play_animations(direction: Vector2)
 ```
 
 Plays animations based on current direction and position
