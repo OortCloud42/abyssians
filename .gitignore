@@ -2,3 +2,6 @@ logs/
 src/reference.json
 docs/ReferenceCollectorCLI.gd.md
 docs/Collector.gd.md
+src/ReferenceCollector.gd
+src/scripts/Collector.gd
+src/scripts/ReferenceCollectorCLI.gd

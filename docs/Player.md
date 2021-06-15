@@ -152,3 +152,4 @@ Adds lives on collision with coin sprite
 
 - signal exited_screen(position): Calls the _on_Player_exited_screen() function which moves the camera when player exited visible screen space
 - signal hearts_update(lifes): Calls the _on_Player_hearts_update() function which updates hearts on HUD
+- signal coins_update(coins): Calls the _on_Player_coins_update() function which updates coins on HUD
