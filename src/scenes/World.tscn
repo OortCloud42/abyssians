@@ -2879,5 +2879,6 @@ position = Vector2( 296, 112 )
 
 [node name="HUD" parent="." instance=ExtResource( 8 )]
 
+[connection signal="coins_update" from="Player" to="HUD" method="_on_Player_coins_update"]
 [connection signal="exited_screen" from="Player" to="Camera2D" method="_on_Player_exited_screen"]
 [connection signal="hearts_update" from="Player" to="HUD" method="_on_Player_hearts_update"]

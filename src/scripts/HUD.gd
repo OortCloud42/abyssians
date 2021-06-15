@@ -7,6 +7,7 @@ onready var heart2 = $Control/Sprite2
 onready var heart3 = $Control/Sprite3
 onready var heart4 = $Control/Sprite4
 onready var heart5 = $Control/Sprite5
+onready var coincounter = $HBoxContainer/Label
 
 func _ready():
 	heart1.frame = 2
@@ -14,6 +15,7 @@ func _ready():
 	heart3.frame = 2
 	heart4.frame = 0
 	heart5.frame = 0
+	coincounter.text = "0000"
 
 
 func _on_Player_hearts_update(lifes):
@@ -47,3 +49,7 @@ func _on_Player_hearts_update(lifes):
 		heart3.frame = 2
 		heart4.frame = 2
 		heart5.frame = (lifes - 4) * 2
+
+
+func _on_Player_coins_update(coins):
+	coincounter.text = str(coins).pad_zeros(4)
