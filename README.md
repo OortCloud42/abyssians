@@ -21,7 +21,7 @@ Platformy które zamierzamy wspierać:
 Diagramy UML
 ------------
 
-![Diagram klas](tu link albo nazwe pliku)
+![Diagram interfejsu użytkownika](https://github.com/OortCloud42/abyssians/blob/master/docs/images/uidiagram.png)
 
 ![Diagram przypadków użycia](https://github.com/OortCloud42/abyssians/blob/master/docs/images/usecase.png)
 
