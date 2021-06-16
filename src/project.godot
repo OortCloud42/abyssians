@@ -49,11 +49,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Camera.gd"
 }, {
-"base": "EditorScript",
-"class": "ReferenceCollector",
-"language": "GDScript",
-"path": "res://ReferenceCollector.gd"
-}, {
 "base": "Control",
 "class": "SettingsMenu",
 "language": "GDScript",
@@ -73,7 +68,6 @@ _global_script_class_icons={
 "MainMenu": "",
 "Player": "",
 "PlayerCamera": "",
-"ReferenceCollector": "",
 "SettingsMenu": "",
 "Slime": ""
 }
