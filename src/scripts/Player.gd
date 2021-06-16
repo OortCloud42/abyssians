@@ -7,6 +7,7 @@ signal exited_screen(position)
 
 # Calls the _on_Player_hearts_update() function which updates hearts on HUD
 signal hearts_update(lifes)
+# Calls the _on_Player_coins_update() function which updates coins on HUD
 signal coins_update(coins)
 
 # Main menu scene path

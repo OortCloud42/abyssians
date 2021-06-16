@@ -15,3 +15,11 @@ var hearts
 ```
 
 Heart sprites
+
+### coincounter
+
+```gdscript
+var coincounter
+```
+
+Coin display

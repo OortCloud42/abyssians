@@ -28,9 +28,15 @@ Diagramy UML
 Ekrany aplikacji
 ----------------
 
+Główne menu:
+
 ![Główne menu](docs/images/main-menu.png)
 
+Ustawienia:
+
 ![Ustawienia](docs/images/settings.png)
+
+Gameplay:
 
 ![Gameplay 1](docs/images/gameplay1.png)
 
@@ -70,3 +76,5 @@ Autorzy
 * Maciej Tułecki [(OortCloud42)](https://github.com/OortCloud42)
 * Piotr Zieniewicz [(akinhet)](https://github.com/akinhet)
 
+![Cat](https://github.com/OortCloud42/abyssians/blob/master/docs/images/cat.jpg)
+- [x] cat
