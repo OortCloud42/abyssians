@@ -1,5 +1,4 @@
-Abyssians
-=========
+# Abyssians
 
 **In development!**
 
@@ -10,23 +9,24 @@ Gra została stworzona prz użyciu silnika [Godot](https://godotengine.org).
 
 [**Scenariusze testowe**](test-scenarios.md)
 
-Wspierane platformy
--------------------
+## Wspierane platformy
 
 Platformy które zamierzamy wspierać:
 
-* Linux
-* Windows
+-   Linux
+-   Windows
 
-Diagramy UML
-------------
+## Diagramy UML
+
+### Diagram interfejsu użytkownika
 
 ![Diagram interfejsu użytkownika](https://github.com/OortCloud42/abyssians/blob/master/docs/images/uidiagram.png)
 
+### Diagram przypadków użycia
+
 ![Diagram przypadków użycia](https://github.com/OortCloud42/abyssians/blob/master/docs/images/usecase.png)
 
-Ekrany aplikacji
-----------------
+## Ekrany aplikacji
 
 Główne menu:
 
@@ -44,8 +44,7 @@ Gameplay:
 
 ![Gameplay 3](docs/images/gameplay3.png)
 
-Przykładowa funkcjonalność
---------------------------
+## Przykładowa funkcjonalność
 
 ```gdscript
 # Checks if player collided with enemy
@@ -62,19 +61,19 @@ func _on_Area2D_body_entered(body : Node):
 		emit_signal("hearts_update", lifes)
 ```
 
-Podsumowanie
-------------
+## Podsumowanie
 
 Gra jest na etapie na którym można by już zaczynać projektować poziomy, przeciwników, itp.  
 Pojawiło się trochę bugów (lekko ruszające się elementy interfejsu, niepoprawnie działający system odrzutu po otrzymaniu obrażeń, itd.), jednak żaden z nich nie sprawia, że gra jest niegrywalna.
 
 W grze napewno brakuje zmiany poziomu, zapisu gry, więcej przeciwników i kilka pomniejszych mechanik(znajdźki, koniec poziomu, itp.).
 
-Autorzy
--------
-* Kuba Woroch [(kubek344)](https://github.com/kubek344)
-* Maciej Tułecki [(OortCloud42)](https://github.com/OortCloud42)
-* Piotr Zieniewicz [(akinhet)](https://github.com/akinhet)
+## Autorzy
+
+-   Kuba Woroch [(kubek344)](https://github.com/kubek344)
+-   Maciej Tułecki [(OortCloud42)](https://github.com/OortCloud42)
+-   Piotr Zieniewicz [(akinhet)](https://github.com/akinhet)
 
 ![Cat](https://github.com/OortCloud42/abyssians/blob/master/docs/images/cat.jpg)
-- [x] cat
+
+-   [x] cat
