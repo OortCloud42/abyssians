@@ -23,7 +23,7 @@ Diagramy UML
 
 [Diagram klas](tu link albo nazwe pliku)
 
-[Diagram przypadków użycia](tu też link)
+[Diagram przypadków użycia](https://github.com/OortCloud42/abyssians/blob/master/docs/images/usecase.png)
 
 Ekrany aplikacji
 ----------------
