@@ -15,3 +15,4 @@ Platformy które zamierzamy wspierać:
 * Windows
 
 ![Cat](https://github.com/OortCloud42/abyssians/blob/master/docs/images/cat.jpg)
+- [x] cat
