@@ -72,7 +72,7 @@ W grze napewno brakuje zmiany poziomu, zapisu gry, więcej przeciwników i kilka
 
 Autorzy
 -------
-* Kuba Woroh [(kubek344)](https://github.com/kubek344)
+* Kuba Woroch [(kubek344)](https://github.com/kubek344)
 * Maciej Tułecki [(OortCloud42)](https://github.com/OortCloud42)
 * Piotr Zieniewicz [(akinhet)](https://github.com/akinhet)
 
