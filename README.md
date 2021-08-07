@@ -70,9 +70,9 @@ W grze napewno brakuje zmiany poziomu, zapisu gry, więcej przeciwników i kilka
 
 ## Autorzy
 
--   Jakub Woroch [(kubek344)](https://github.com/kubek344)
--   Maciej Tułecki [(OortCloud42)](https://github.com/OortCloud42)
--   Piotr Zieniewicz [(akinhet)](https://github.com/akinhet)
+-   [(kubek344)](https://github.com/kubek344)
+-   [(OortCloud42)](https://github.com/OortCloud42)
+-   [(akinhet)](https://github.com/akinhet)
 
 ![Cat](https://github.com/OortCloud42/abyssians/blob/master/docs/images/cat.jpg)
 
